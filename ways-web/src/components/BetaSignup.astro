@@ -69,7 +69,7 @@ const f = tr.signup.form;
           <div class="field field-checkbox">
             <label class="checkbox-label">
               <input type="checkbox" name="gdpr" required class="checkbox-input" />
-              <span class="checkbox-text">{f.gdpr}</span>
+              <span class="checkbox-text" set:html={f.gdpr}></span>
             </label>
           </div>
 

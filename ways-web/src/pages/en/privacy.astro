@@ -1,0 +1,279 @@
+---
+export const prerender = true;
+
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { t } from '../../i18n';
+
+const locale = 'en';
+const tr = t(locale);
+---
+
+<Layout
+  tr={tr}
+  locale={locale}
+  pageTitle="Privacy Policy — Ways"
+  pageDesc="How we process your personal data for the Ways beta sign-up (Pitland s.r.o.)."
+>
+  <Nav tr={tr} locale={locale} />
+  <main>
+    <article class="privacy container">
+      <header class="privacy-header">
+        <p class="overline">Legal</p>
+        <h1 class="section-headline">Privacy Policy</h1>
+        <p class="privacy-meta">Version 1.0 · effective 2026-05-03 · Controller: Pitland s.r.o.</p>
+      </header>
+
+      <div class="privacy-notice">
+        This document applies to the beta sign-up on <strong>ways.cz</strong>.
+        We collect only the data necessary to select participants for the closed beta.
+      </div>
+
+      <section class="privacy-section">
+        <h2>1. Data Controller</h2>
+        <p>
+          <strong>Pitland s.r.o.</strong><br />
+          Email: <a href="mailto:hello@ways.cz">hello@ways.cz</a><br />
+          Ways is a standalone brand of Pitland s.r.o.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>2. Data We Collect</h2>
+        <p>When you apply for the beta we collect the following data:</p>
+        <div class="table-wrap">
+          <table class="privacy-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Required</th>
+                <th>Purpose</th>
+                <th>Retention</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Email address</td>
+                <td>Yes</td>
+                <td>Contact and confirmation (double opt-in)</td>
+                <td>Duration of beta programme, max. 24 months</td>
+              </tr>
+              <tr>
+                <td>Bike type</td>
+                <td>Yes</td>
+                <td>Tailoring beta groups</td>
+                <td>Duration of beta programme, max. 24 months</td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td>Yes</td>
+                <td>Geographic scope of the beta</td>
+                <td>Duration of beta programme, max. 24 months</td>
+              </tr>
+              <tr>
+                <td>IP address</td>
+                <td>Operational</td>
+                <td>API security, abuse prevention</td>
+                <td>30 days (logs), then automatically deleted</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="privacy-section">
+        <h2>3. Legal Basis for Processing</h2>
+        <p>
+          Processing of your email, bike type and city is based on your <strong>consent</strong>
+          under Art. 6(1)(a) GDPR, which you provide by ticking the checkbox in the sign-up form.
+          You may withdraw your consent at any time (see section 6).
+        </p>
+        <p>
+          IP address is processed on the basis of the controller's <strong>legitimate interest</strong>
+          under Art. 6(1)(f) GDPR for API operational security.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>4. Recipients of Personal Data</h2>
+        <ul class="privacy-list">
+          <li>
+            <strong>Vercel Inc.</strong> (API and website hosting, USA) — transfer covered by
+            EU Standard Contractual Clauses (SCC 2021/914/EU).
+          </li>
+          <li>
+            <strong>Plausible Analytics</strong> (website analytics, EU) —
+            <em>cookie-free</em>, no individual tracking, only anonymised aggregate data.
+            No cookie consent required.
+          </li>
+        </ul>
+        <p>We do <strong>not sell or rent</strong> your data to third parties.</p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>5. Cookies and Tracking</h2>
+        <p>
+          Ways does not use tracking cookies. Website analytics are provided by
+          <strong>Plausible Analytics</strong> — cookie-free, no cross-site tracking,
+          collecting only anonymised aggregate metrics (page views, referrers, country).
+          <strong>No cookie consent is required.</strong>
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>6. Your Rights</h2>
+        <p>As a data subject you have the following rights:</p>
+        <ul class="privacy-list">
+          <li><strong>Right of access</strong> — find out what data we hold about you.</li>
+          <li><strong>Right to rectification</strong> — correct inaccurate or incomplete data.</li>
+          <li><strong>Right to erasure</strong> — request deletion of your personal data.</li>
+          <li>
+            <strong>Right to withdraw consent</strong> — at any time without affecting the
+            lawfulness of prior processing.
+          </li>
+          <li>
+            <strong>Right to lodge a complaint</strong> — with the Czech Data Protection
+            Authority (<a href="https://www.uoou.cz" target="_blank" rel="noopener">uoou.cz</a>).
+          </li>
+        </ul>
+        <p>
+          To exercise any of these rights contact us at
+          <a href="mailto:hello@ways.cz">hello@ways.cz</a>.
+          We will respond within 30 days per Art. 12 GDPR.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h2>7. Contact</h2>
+        <p>
+          <strong>Pitland s.r.o.</strong><br />
+          Email: <a href="mailto:hello@ways.cz">hello@ways.cz</a>
+        </p>
+      </section>
+    </article>
+  </main>
+  <Footer tr={tr} />
+</Layout>
+
+<style>
+  .privacy {
+    padding: clamp(4rem, 10vh, 7rem) 0 clamp(5rem, 12vh, 9rem);
+    max-width: 760px;
+  }
+
+  .privacy-header {
+    margin-bottom: 3rem;
+  }
+
+  .privacy-meta {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--c-text-muted);
+  }
+
+  .privacy-notice {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.65;
+    margin-bottom: 3rem;
+  }
+
+  .privacy-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--c-lime);
+    margin-bottom: 0.875rem;
+    letter-spacing: -0.01em;
+  }
+
+  .privacy-section p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .privacy-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .privacy-section a {
+    color: var(--c-lime);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .privacy-table th {
+    text-align: left;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+    border-bottom: 1px solid var(--c-border);
+    padding: 0.625rem 0.875rem;
+    white-space: nowrap;
+  }
+
+  .privacy-table td {
+    padding: 0.625rem 0.875rem;
+    color: rgba(255, 255, 255, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .privacy-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .privacy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .privacy-list li {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.65;
+    padding-left: 1.375rem;
+    position: relative;
+  }
+
+  .privacy-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--c-lime);
+    font-weight: 600;
+  }
+
+  .privacy-list a {
+    color: var(--c-lime);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

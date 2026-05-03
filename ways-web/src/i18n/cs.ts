@@ -19,7 +19,7 @@ const cs = {
     overline: 'Uzavřená beta — přihlášky nyní otevřeny',
     headline: 'Navigace pro motorkáře,\nkterá ví…',
     subline:
-      'Community hazardová data. Motorcycle-aware routing. Flow score pro každou jízdu.',
+      'Ví o gravel v zatáčce, radaru za kopcem a počasí na příští hodinu. Komunitní data, Flow Score, routing navržený pro motorku — ne auto.',
     cta: 'Vstup do bety',
     ctaHref: '#signup',
     scrollLabel: 'Zjistit více',
@@ -31,19 +31,19 @@ const cs = {
     items: [
       {
         title: 'Nebezpečné povrchy',
-        desc: 'Gravel, rozbitý asfalt, olejové skvrny. Žádná auto-navigace tyhle hazardy nezná ani nesdílí.',
+        desc: 'Gravel, rozbitý asfalt, olejová skvrna. Auto-navigace tyto hazardy nevidí ani nesdílí — zjistíš to až na místě.',
       },
       {
         title: 'Špatné trasy',
-        desc: 'Nejrychlejší trasa ≠ nejlepší moto trasa. Scenic zatáčky, převýšení, flow — to auto neřeší.',
+        desc: 'Nejrychlejší ≠ nejlepší moto trasa. Auto-routing nezná scenic zatáčky, kvalitu povrchu ani flow jízdy.',
       },
       {
         title: 'Počasí ignorováno',
-        desc: 'Déšť, mlha, ranní rosa. Navigace tě pošle dál, i když podmínky nejsou pro motorku.',
+        desc: 'Déšť, mlha, ranní rosa na asfaltu. Navigace tě pošle dál bez varování — moto podmínky prostě neexistují.',
       },
       {
         title: 'Žádná komunita',
-        desc: 'Tisíce motorkářů znají nejlepší trasy. Ale tuhle znalost nikde nenajdeš — ta data neexistují.',
+        desc: 'Tisíce motorkářů znají nejlepší trasy a nejhorší úseky. Ale jejich znalost nikde neexistuje — ta data prostě nejsou.',
       },
     ],
   },
@@ -53,26 +53,26 @@ const cs = {
     items: [
       {
         title: 'Community hazardy',
-        desc: 'Real-time data od motorkářů. Gravel, nehody, radary, uzavírky — ověřené komunitou v reálném čase.',
+        desc: 'Data od motorkářů, kteří jeli před tebou. Gravel, nehody, radary, uzavírky — ověřené komunitou v reálném čase.',
       },
       {
         title: 'Sub-400ms hazard alert',
-        desc: 'Upozornění dřív než dojedeme k problému. Technický limit: latence ≤ 400 ms od reportu k alertu.',
+        desc: 'Upozornění přijde dřív, než hazard dosáhneš. Měřený limit: ≤ 400 ms od reportu k alertu.',
       },
       {
         title: 'Motorcycle-aware routing',
-        desc: 'Algoritmus navržený pro motorky: scenic preference, flow score, preferovaný povrch, tvá motorka.',
+        desc: 'Routing navržený pro motorky: scenic preference, Flow Score, typ povrchu, výkon tvé motorky.',
       },
       {
         title: 'Flow Score',
-        desc: 'Každá trasa má skóre plynulosti jízdy. Najdi svůj ideální kompromis rychlosti, zábavy a bezpečí.',
+        desc: 'Každá trasa dostane skóre plynulosti jízdy. Najdi svůj ideální balans rychlosti, zábavy a bezpečí na první pohled.',
       },
     ],
   },
   team: {
     overline: 'Tým + trakce',
     headline: 'Kdo to staví.',
-    body: 'Pitland s.r.o. — AI-first startup z Prahy. Stavíme Ways s modelem kde agenti píší kód, designují a testují — lidé řídí produkt a komunitu.',
+    body: 'Pitland s.r.o. — startup z Prahy, AI-first od prvního dne. Ways stavíme modelem kde agenti píší kód, testují a iterují — lidé řídí produkt, komunitu a směr.',
     stats: [
       { value: '≤400ms', label: 'Technický limit hazard alertu' },
       { value: 'AI-first', label: 'Execution model' },
@@ -85,7 +85,7 @@ const cs = {
     overline: 'Vstup do bety',
     headline: 'Buď první na silnici.',
     subline:
-      'Uzavřená beta — výběr z přihlášek. Informujeme emailem s double opt-in potvrzením.',
+      'Uzavřená beta — výběr z přihlášek. Oznámení posíláme emailem s double opt-in potvrzením.',
     form: {
       email: 'Email',
       emailPlaceholder: 'tvuj@email.cz',
@@ -100,12 +100,12 @@ const cs = {
       ],
       city: 'Město',
       cityPlaceholder: 'Praha',
-      gdpr: 'Souhlasím se zpracováním osobních údajů pro účely beta programu Ways (Pitland s.r.o.). Data nebudou sdílena se třetími stranami.',
+      gdpr: 'Souhlasím se zpracováním e-mailu, typu motorky a města za účelem beta výběru Ways (správce: Pitland s.r.o.). <a href="/privacy">Zásady ochrany osobních údajů</a>.',
       submit: 'Přihlásit se do bety',
       submitting: 'Odesílám…',
       successTitle: 'Přihláška přijata!',
       successBody:
-        'Zkontroluj svůj email — pošleme ti potvrzovací odkaz. Brzy ti dáme vědět o výsledku výběru.',
+        'Zkontroluj svůj email — pošleme ti potvrzovací odkaz. O výsledku výběru tě informujeme brzy.',
       errorGeneric: 'Chyba při odesílání. Zkus to prosím znovu.',
       errorRateLimit: 'Příliš mnoho pokusů. Zkus to za chvíli.',
     },

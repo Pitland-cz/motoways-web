@@ -9,6 +9,7 @@ import Solution from '../components/Solution.astro';
 import Team from '../components/Team.astro';
 import BetaSignup from '../components/BetaSignup.astro';
 import Footer from '../components/Footer.astro';
+import PlausibleGoals from '../components/PlausibleGoals.astro';
 import { t } from '../i18n';
 
 const locale = 'cs';
@@ -25,4 +26,5 @@ const tr = t(locale);
     <BetaSignup tr={tr} locale={locale} />
   </main>
   <Footer tr={tr} />
+  <PlausibleGoals />
 </Layout>

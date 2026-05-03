@@ -51,7 +51,13 @@ const { tr, locale } = Astro.props;
       <a href={tr.nav.langSwitchHref} class="nav-link nav-lang" role="listitem" hreflang={locale === 'cs' ? 'en' : 'cs'}>
         {tr.nav.langSwitch}
       </a>
-      <a href={`${locale === 'en' ? '/en' : ''}#signup`} class="btn-primary nav-cta" role="listitem">
+      <a
+        href={`${locale === 'en' ? '/en' : ''}#signup`}
+        class="btn-primary nav-cta"
+        role="listitem"
+        data-plausible-goal="CTA Click"
+        data-plausible-prop-location="nav"
+      >
         {tr.nav.signup}
       </a>
     </div>

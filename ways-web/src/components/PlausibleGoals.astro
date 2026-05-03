@@ -1,0 +1,64 @@
+---
+// PlausibleGoals.astro
+// Drop into ways-web/src/components/ and include in the landing page layout.
+// Handles: CTA Click tracking (data-plausible-goal), Scroll Depth 25/50/75/100%.
+// Beta Signup event is fired directly from BetaSignup.astro on form success.
+//
+// Usage in layout:
+//   import PlausibleGoals from '../components/PlausibleGoals.astro';
+//   <PlausibleGoals />
+//
+// Markup — mark any CTA button/link with data-plausible-goal:
+//   <a href="/signup" data-plausible-goal="CTA Click" data-plausible-prop-location="hero">
+//     Chci být první
+//   </a>
+---
+
+<script>
+  declare global {
+    interface Window {
+      plausible?: (event: string, opts?: { props?: Record<string, string> }) => void;
+    }
+  }
+
+  // --- CTA Click: wire data-plausible-goal attributes ---
+  document.querySelectorAll<HTMLElement>('[data-plausible-goal]').forEach((el) => {
+    el.addEventListener('click', () => {
+      const goal = el.getAttribute('data-plausible-goal');
+      if (!goal) return;
+
+      const props: Record<string, string> = {};
+      for (const attr of Array.from(el.attributes)) {
+        const match = attr.name.match(/^data-plausible-prop-(.+)$/);
+        if (match) props[match[1]] = attr.value;
+      }
+
+      window.plausible?.(goal, Object.keys(props).length ? { props } : undefined);
+    });
+  });
+
+  // --- Scroll Depth: 25 / 50 / 75 / 100 % ---
+  const THRESHOLDS = [25, 50, 75, 100];
+  const fired = new Set<number>();
+
+  function scrollPct(): number {
+    const el = document.documentElement;
+    const scrolled = el.scrollTop || document.body.scrollTop;
+    const max = el.scrollHeight - el.clientHeight;
+    return max > 0 ? Math.round((scrolled / max) * 100) : 0;
+  }
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      const pct = scrollPct();
+      for (const t of THRESHOLDS) {
+        if (pct >= t && !fired.has(t)) {
+          fired.add(t);
+          window.plausible?.('Scroll Depth', { props: { depth: `${t}%` } });
+        }
+      }
+    },
+    { passive: true },
+  );
+</script>

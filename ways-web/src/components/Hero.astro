@@ -43,7 +43,12 @@ const lines = tr.hero.headline.split('\n');
 
     <p class="hero-subline">{tr.hero.subline}</p>
 
-    <a href={tr.hero.ctaHref} class="btn-primary hero-cta">
+    <a
+      href={tr.hero.ctaHref}
+      class="btn-primary hero-cta"
+      data-plausible-goal="CTA Click"
+      data-plausible-prop-location="hero"
+    >
       {tr.hero.cta}
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
         <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>

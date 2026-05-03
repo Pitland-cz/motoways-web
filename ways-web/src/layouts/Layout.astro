@@ -7,9 +7,11 @@ import '@fontsource/poppins/700.css';
 interface Props {
   tr: T;
   locale: Locale;
+  pageTitle?: string;
+  pageDesc?: string;
 }
 
-const { tr, locale } = Astro.props;
+const { tr, locale, pageTitle, pageDesc } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const orgSchema = {
@@ -38,8 +40,8 @@ const orgSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1d1d1b" />
-    <title>{tr.meta.title}</title>
-    <meta name="description" content={tr.meta.description} />
+    <title>{pageTitle ?? tr.meta.title}</title>
+    <meta name="description" content={pageDesc ?? tr.meta.description} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->

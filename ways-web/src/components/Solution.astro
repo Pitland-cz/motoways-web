@@ -1,0 +1,124 @@
+---
+import type { T } from '../i18n';
+
+interface Props {
+  tr: T;
+}
+
+const { tr } = Astro.props;
+
+const icons = [
+  /* shield / hazard */
+  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3L5 7v9c0 6 4.8 11.6 11 13 6.2-1.4 11-7 11-13V7L16 3z" stroke="#c6ff00" stroke-width="1.75" stroke-linejoin="round"/><path d="M11 16l3.5 3.5L21 13" stroke="#c6ff00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  /* lightning / speed */
+  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M19 4L8 18h9l-4 10L28 14h-9l0-10z" stroke="#c6ff00" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"/></svg>`,
+  /* route / navigation */
+  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="3" stroke="#c6ff00" stroke-width="1.75"/><circle cx="24" cy="24" r="3" stroke="#c6ff00" stroke-width="1.75"/><path d="M8 11v6a4 4 0 004 4h8" stroke="#c6ff00" stroke-width="1.75" stroke-linecap="round"/><circle cx="8" cy="8" r="1.5" fill="#c6ff00"/></svg>`,
+  /* star / score */
+  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4l3.1 7.5 8.1.7-6.1 5.4 1.9 8-7-4.2-7 4.2 1.9-8-6.1-5.4 8.1-.7L16 4z" stroke="#c6ff00" stroke-width="1.75" stroke-linejoin="round"/></svg>`,
+];
+---
+
+<section class="solution" id="solution" aria-labelledby="solution-headline">
+  <div class="container">
+    <p class="overline">{tr.solution.overline}</p>
+    <h2 class="section-headline" id="solution-headline">{tr.solution.headline}</h2>
+
+    <ul class="solution-grid" role="list">
+      {tr.solution.items.map((item, i) => (
+        <li class="solution-item">
+          <div class="sol-icon-wrap" set:html={icons[i]} />
+          <div class="sol-content">
+            <h3 class="sol-title">{item.title}</h3>
+            <p class="sol-desc">{item.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .solution {
+    padding: var(--section-py) 0;
+    background: var(--c-black);
+  }
+
+  .solution .section-headline {
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
+    max-width: 680px;
+  }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    list-style: none;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .solution-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 2rem 2rem;
+    border-right: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+    transition: background 0.2s ease;
+  }
+
+  .solution-item:hover {
+    background: var(--c-lime-dim);
+  }
+
+  .solution-item:nth-child(even) {
+    border-right: none;
+  }
+
+  .solution-item:nth-child(3),
+  .solution-item:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .sol-icon-wrap {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.125rem;
+  }
+
+  .sol-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .sol-desc {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 640px) {
+    .solution-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .solution-item {
+      border-right: none;
+    }
+
+    .solution-item:nth-child(3) {
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .solution-item:nth-child(4) {
+      border-bottom: none;
+    }
+  }
+</style>

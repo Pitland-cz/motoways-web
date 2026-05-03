@@ -1,0 +1,97 @@
+---
+import type { T } from '../i18n';
+
+interface Props {
+  tr: T;
+}
+
+const { tr } = Astro.props;
+
+const icons = [
+  /* warning triangle */
+  `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 3L26 24H2L14 3Z" stroke="#c6ff00" stroke-width="1.75" stroke-linejoin="round"/><path d="M14 11v6M14 20v.5" stroke="#c6ff00" stroke-width="2" stroke-linecap="round"/></svg>`,
+  /* route/road */
+  `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M4 24L14 4L24 24" stroke="#c6ff00" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round"/><path d="M7 18h14" stroke="#c6ff00" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+  /* cloud/weather */
+  `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M8 19a5 5 0 010-10 6.5 6.5 0 0112 3 4 4 0 010 8H8z" stroke="#c6ff00" stroke-width="1.75" stroke-linejoin="round"/><path d="M10 23l1-2M14 23l1-2M18 23l1-2" stroke="#c6ff00" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+  /* community/people */
+  `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><circle cx="10" cy="9" r="3" stroke="#c6ff00" stroke-width="1.75"/><circle cx="18" cy="9" r="3" stroke="#c6ff00" stroke-width="1.75"/><path d="M4 22c0-3.314 2.686-6 6-6h8c3.314 0 6 2.686 6 6" stroke="#c6ff00" stroke-width="1.75" stroke-linecap="round"/></svg>`,
+];
+---
+
+<section class="problem" id="problem" aria-labelledby="problem-headline">
+  <div class="container">
+    <p class="overline">{tr.problem.overline}</p>
+    <h2 class="section-headline" id="problem-headline">{tr.problem.headline}</h2>
+    <p class="problem-body">{tr.problem.body}</p>
+
+    <ul class="problem-grid" role="list">
+      {tr.problem.items.map((item, i) => (
+        <li class="problem-card">
+          <div class="card-icon" set:html={icons[i]} />
+          <h3 class="card-title">{item.title}</h3>
+          <p class="card-desc">{item.desc}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .problem {
+    padding: var(--section-py) 0;
+    background: var(--c-surface);
+  }
+
+  .problem-body {
+    max-width: 620px;
+    margin-top: 1.25rem;
+    margin-bottom: 3.5rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    list-style: none;
+  }
+
+  .problem-card {
+    background: var(--c-black);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .problem-card:hover {
+    border-color: rgba(198, 255, 0, 0.3);
+    box-shadow: 0 4px 24px rgba(198, 255, 0, 0.06);
+  }
+
+  .card-icon {
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .card-desc {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 640px) {
+    .problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

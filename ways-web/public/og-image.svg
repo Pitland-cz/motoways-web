@@ -1,0 +1,43 @@
+<!--
+  OG image source — 1200×630
+  Convert to PNG before deploying: use sharp, puppeteer, or Vercel @vercel/og
+  Command: npx sharp public/og-image.svg -o public/og-image.png
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#1d1d1b"/>
+
+  <!-- Radial glow -->
+  <radialGradient id="glow" cx="50%" cy="100%" r="60%">
+    <stop offset="0%" stop-color="#c6ff00" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#c6ff00" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- W Mark — centred, large -->
+  <g transform="translate(420, 80) scale(1.8)">
+    <polyline points="21.5,21.5 62.5,178.5 100,89.5 137.5,178.5 178.5,21.5"
+      fill="none" stroke="#c6ff00" stroke-width="30"
+      stroke-opacity="0.18" stroke-linejoin="round" stroke-linecap="round"/>
+    <polyline points="21.5,21.5 62.5,178.5 100,89.5 137.5,178.5 178.5,21.5"
+      fill="none" stroke="#c6ff00" stroke-width="13"
+      stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="21.5" cy="21.5" r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+    <circle cx="178.5" cy="21.5" r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+    <circle cx="62.5"  cy="178.5" r="6.5" fill="#c6ff00"/>
+    <circle cx="137.5" cy="178.5" r="6.5" fill="#c6ff00"/>
+    <circle cx="100"   cy="89.5"  r="8"   fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+  </g>
+
+  <!-- Tagline -->
+  <text x="600" y="530"
+    font-family="Poppins, system-ui, sans-serif" font-size="32" font-weight="700"
+    fill="#ffffff" text-anchor="middle" dominant-baseline="middle"
+    letter-spacing="-0.5">Navigace pro motorkáře, která ví…</text>
+
+  <!-- URL -->
+  <text x="600" y="592"
+    font-family="Poppins, system-ui, sans-serif" font-size="20" font-weight="400"
+    fill="rgba(255,255,255,0.4)" text-anchor="middle" dominant-baseline="middle">
+    ways.cz
+  </text>
+</svg>

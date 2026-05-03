@@ -1,0 +1,142 @@
+---
+import type { T } from '../i18n';
+
+interface Props {
+  tr: T;
+}
+
+const { tr } = Astro.props;
+---
+
+<section class="team" id="team" aria-labelledby="team-headline">
+  <div class="container">
+    <div class="team-inner">
+      <div class="team-text">
+        <p class="overline">{tr.team.overline}</p>
+        <h2 class="section-headline" id="team-headline">{tr.team.headline}</h2>
+        <p class="team-body">{tr.team.body}</p>
+
+        <p class="team-memo">
+          {tr.team.memo}
+          {' '}
+          <a href="mailto:hello@ways.cz" class="memo-link">{tr.team.memoContact} →</a>
+        </p>
+      </div>
+
+      <div class="team-stats" aria-label="Key numbers">
+        {tr.team.stats.map((stat) => (
+          <div class="stat-item">
+            <span class="stat-value">{stat.value}</span>
+            <span class="stat-label">{stat.label}</span>
+          </div>
+        ))}
+
+        <!-- Pitland badge -->
+        <div class="pitland-badge">
+          <span class="badge-label">Built by</span>
+          <strong class="badge-name">Pitland s.r.o.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team {
+    padding: var(--section-py) 0;
+    background: var(--c-surface);
+  }
+
+  .team-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .team-body {
+    margin-top: 1.25rem;
+    margin-bottom: 1.75rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .team-memo {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .memo-link {
+    color: var(--c-lime);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.15s ease;
+  }
+
+  .memo-link:hover {
+    opacity: 0.8;
+  }
+
+  .team-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1.75rem 2rem;
+    border-bottom: 1px solid var(--c-border);
+    transition: background 0.2s ease;
+  }
+
+  .stat-item:hover {
+    background: var(--c-lime-dim);
+  }
+
+  .stat-value {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--c-lime);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .pitland-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .badge-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .badge-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  @media (max-width: 768px) {
+    .team-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

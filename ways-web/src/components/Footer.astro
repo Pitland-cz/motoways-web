@@ -1,0 +1,85 @@
+---
+import type { T } from '../i18n';
+
+interface Props {
+  tr: T;
+}
+
+const { tr } = Astro.props;
+---
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <!-- Mini W mark -->
+      <div class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" aria-label="Ways" role="img">
+          <rect width="32" height="32" fill="#1d1d1b"/>
+          <polyline points="2.8,2.8 9.7,29.2 16,14.2 22.3,29.2 29.2,2.8"
+            fill="none" stroke="#c6ff00" stroke-width="3.6"
+            stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <span class="footer-brand-name">Ways</span>
+      </div>
+
+      <div class="footer-links">
+        <a href={tr.footer.privacyHref} class="footer-link">{tr.footer.privacy}</a>
+        <a href={tr.footer.contactHref} class="footer-link">{tr.footer.contact}</a>
+      </div>
+    </div>
+
+    <p class="footer-legal">{tr.footer.legal}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--c-surface-2, #2a2a28);
+    border-top: 1px solid var(--c-border);
+    padding: 2.5rem 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .footer-brand-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--c-white);
+    letter-spacing: -0.01em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .footer-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .footer-legal {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 1.5;
+  }
+</style>

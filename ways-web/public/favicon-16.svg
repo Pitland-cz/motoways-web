@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!--
+    WAYS — Favicon 16×16 (ultra-simplified) v2
+    Direction: V03 Navigation Route W — centered, equal margins
+    Equal 1px visual margin all sides (stroke edge to viewBox edge):
+      stroke-width=1.8 → half-stroke=0.9 → path starts at 1.9, ends at 14.1
+      path span: 12.2×12.2 (square bounding box for equal margins)
+    Note: ~12% vertical stretch to achieve equal 1px margin all sides
+    WCAG: #c6ff00 on #1d1d1b = 14.4:1 (AAA)
+  -->
+  <rect width="16" height="16" fill="#1d1d1b"/>
+  <polyline points="1.9,1.9 5.1,14.1 8,7.2 10.9,14.1 14.1,1.9"
+    fill="none" stroke="#c6ff00" stroke-width="1.8"
+    stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

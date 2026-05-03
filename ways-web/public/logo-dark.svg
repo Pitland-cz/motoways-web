@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210">
+  <!--
+    WAYS — Primary Horizontal Wordmark — DARK BACKGROUND
+    Direction: V03 Navigation Route W (board approved 2026-05-03)
+    Usage: dark backgrounds, app UI dark mode, dark OG image, dark print
+    Colors: #c6ff00 route + glow + waypoints | #ffffff "ays" | #1d1d1b bg
+    Clear space: ≥ 0.5× W-mark height (≥ 100px) on all sides
+    Font: Poppins Bold 700 — embed via @font-face in production
+    W mark canonical path: M 12,18 L 58,175 L 100,86 L 142,175 L 188,18
+    WCAG: #c6ff00 on #1d1d1b = 14.4:1 (AAA) | #fff on #1d1d1b = 16.4:1 (AAA)
+    v04: spodek "y" zarovnán na úroveň spodních waypoints (y=175, baseline→y=153)
+         logo vycentrováno přes translate(18,3), nic není oříznuté
+    v05: mezera W→a zvětšena (x=172→181); translate(18,3)→(12,3) pro udržení centrace
+    v06: text x=181→179 (jemnější doladění mezery W→a)
+    v07: rovnoměrný okraj ~17px na všech stranách; viewBox 360×210, translate(16,11)
+  -->
+  <rect width="360" height="210" fill="#1d1d1b"/>
+
+  <g transform="translate(16, 11)">
+    <!-- W MARK — Navigation Route, dark-bg variant -->
+    <!-- Halo glow -->
+    <polyline points="12,18 58,175 100,86 142,175 188,18"
+      fill="none" stroke="#c6ff00" stroke-width="30"
+      stroke-opacity="0.18" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Route main line -->
+    <polyline points="12,18 58,175 100,86 142,175 188,18"
+      fill="none" stroke="#c6ff00" stroke-width="13"
+      stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Start ring -->
+    <circle cx="12"  cy="18" r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+    <!-- End ring -->
+    <circle cx="188" cy="18" r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+    <!-- Peak waypoints — solid lime -->
+    <circle cx="58"  cy="175" r="6.5" fill="#c6ff00"/>
+    <circle cx="142" cy="175" r="6.5" fill="#c6ff00"/>
+    <!-- Valley waypoint — hollow ring -->
+    <circle cx="100" cy="86"  r="8"   fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+
+    <!-- "ays" — Poppins Bold 700, white
+         baseline y=153 → descender spodek y≈175, lícuje s peak waypoints
+         x=179 → mezera W→a ≈10px na úrovni x-height -->
+    <text x="179" y="153"
+      font-family="Poppins, sans-serif"
+      font-weight="700" font-stretch="condensed" font-size="88"
+      fill="#ffffff"
+      dominant-baseline="auto"
+      text-anchor="start">ays</text>
+  </g>
+</svg>

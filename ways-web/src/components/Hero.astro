@@ -1,0 +1,151 @@
+---
+import type { T } from '../i18n';
+
+interface Props {
+  tr: T;
+}
+
+const { tr } = Astro.props;
+const lines = tr.hero.headline.split('\n');
+---
+
+<section class="hero" aria-labelledby="hero-headline">
+  <!-- Background radial glow -->
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="hero-inner container">
+    <p class="overline">{tr.hero.overline}</p>
+
+    <h1 class="hero-headline" id="hero-headline">
+      {lines.map((line, i) => (
+        <span class:list={['headline-line', { 'headline-accent': i === lines.length - 1 }]}>
+          {line}
+        </span>
+      ))}
+    </h1>
+
+    <!-- W mark monogram -->
+    <div class="hero-mark" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="180" height="180">
+        <polyline points="21.5,21.5 62.5,178.5 100,89.5 137.5,178.5 178.5,21.5"
+          fill="none" stroke="#c6ff00" stroke-width="30"
+          stroke-opacity="0.18" stroke-linejoin="round" stroke-linecap="round"/>
+        <polyline points="21.5,21.5 62.5,178.5 100,89.5 137.5,178.5 178.5,21.5"
+          fill="none" stroke="#c6ff00" stroke-width="13"
+          stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="21.5" cy="21.5" r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+        <circle cx="178.5" cy="21.5" r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+        <circle cx="62.5"  cy="178.5" r="6.5" fill="#c6ff00"/>
+        <circle cx="137.5" cy="178.5" r="6.5" fill="#c6ff00"/>
+        <circle cx="100"   cy="89.5"  r="8"   fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+      </svg>
+    </div>
+
+    <p class="hero-subline">{tr.hero.subline}</p>
+
+    <a href={tr.hero.ctaHref} class="btn-primary hero-cta">
+      {tr.hero.cta}
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5v14M6 13l6 6 6-6" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem var(--px) 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(198, 255, 0, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .hero-headline {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(2.5rem, 6vw + 1rem, 5.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+  }
+
+  .headline-line {
+    display: block;
+  }
+
+  .headline-accent {
+    color: var(--c-lime);
+  }
+
+  .hero-mark {
+    margin: 2rem 0 1.75rem;
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 0px rgba(198,255,0,0)); }
+    50% { filter: drop-shadow(0 0 28px rgba(198,255,0,0.35)); }
+  }
+
+  .hero-subline {
+    max-width: 560px;
+    font-size: clamp(1rem, 1.5vw + 0.5rem, 1.2rem);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-cta {
+    font-size: 1.0625rem;
+    padding: 1rem 2.25rem;
+    box-shadow: 0 0 0 0 rgba(198, 255, 0, 0);
+    transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out);
+  }
+
+  .hero-cta:hover {
+    box-shadow: 0 8px 40px rgba(198, 255, 0, 0.35);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2.4s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+</style>

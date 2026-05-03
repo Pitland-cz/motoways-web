@@ -1,0 +1,200 @@
+---
+import type { T, Locale } from '../i18n';
+
+interface Props {
+  tr: T;
+  locale: Locale;
+}
+
+const { tr, locale } = Astro.props;
+---
+
+<header class="nav-wrap" role="banner">
+  <nav class="nav container" aria-label="Main navigation">
+    <a href={locale === 'cs' ? '/' : '/en'} class="nav-logo" aria-label="Ways — home">
+      <!-- Wordmark inline SVG (dark-bg variant, 160×94 viewBox scaled) -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 360 210"
+        width="108"
+        height="63"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <g transform="translate(16, 11)">
+          <polyline points="12,18 58,175 100,86 142,175 188,18"
+            fill="none" stroke="#c6ff00" stroke-width="30"
+            stroke-opacity="0.18" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="12,18 58,175 100,86 142,175 188,18"
+            fill="none" stroke="#c6ff00" stroke-width="13"
+            stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="12"  cy="18"  r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+          <circle cx="188" cy="18"  r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+          <circle cx="58"  cy="175" r="6.5" fill="#c6ff00"/>
+          <circle cx="142" cy="175" r="6.5" fill="#c6ff00"/>
+          <circle cx="100" cy="86"  r="8"   fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
+          <text x="179" y="153"
+            font-family="Poppins, sans-serif" font-size="118" font-weight="700"
+            fill="#ffffff" dominant-baseline="auto">ays</text>
+        </g>
+      </svg>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu" role="list">
+      <a href={`${locale === 'en' ? '/en' : ''}#problem`} class="nav-link" role="listitem">{tr.nav.problem}</a>
+      <a href={`${locale === 'en' ? '/en' : ''}#solution`} class="nav-link" role="listitem">{tr.nav.solution}</a>
+      <a href={`${locale === 'en' ? '/en' : ''}#team`} class="nav-link" role="listitem">{tr.nav.team}</a>
+      <a href={tr.nav.langSwitchHref} class="nav-link nav-lang" role="listitem" hreflang={locale === 'cs' ? 'en' : 'cs'}>
+        {tr.nav.langSwitch}
+      </a>
+      <a href={`${locale === 'en' ? '/en' : ''}#signup`} class="btn-primary nav-cta" role="listitem">
+        {tr.nav.signup}
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle') as HTMLButtonElement | null;
+  const menu = document.getElementById('nav-menu');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.toggle('open', !expanded);
+  });
+
+  // Close menu on link click
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('open');
+    });
+  });
+</script>
+
+<style>
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(29, 29, 27, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 4rem;
+  }
+
+  .nav-logo {
+    flex-shrink: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    border-radius: var(--radius-sm);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--c-white);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .nav-lang {
+    color: var(--c-lime);
+    margin-right: 0.5rem;
+  }
+
+  .nav-lang:hover {
+    color: var(--c-lime);
+    background: var(--c-lime-dim);
+  }
+
+  .nav-cta {
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--c-white);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  @media (max-width: 680px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      right: 0;
+      background: #1d1d1b;
+      border-bottom: 1px solid var(--c-border);
+      padding: 1rem var(--px) 1.5rem;
+    }
+
+    .nav-menu.open {
+      display: flex;
+    }
+
+    .nav-link {
+      padding: 0.75rem 0.5rem;
+      border-radius: 0;
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .nav-lang {
+      margin-right: 0;
+    }
+
+    .nav-cta {
+      margin-top: 1rem;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+</style>

@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: 'https://ways.cz',
+  site: 'https://motoways.cz',
   output: 'server',
   adapter: vercel(),
   i18n: {

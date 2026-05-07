@@ -17,8 +17,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Ways',
-  url: 'https://ways.cz',
+  name: 'Motoways',
+  url: 'https://motoways.cz',
   description: tr.meta.description,
   foundingDate: '2026',
   parentOrganization: {
@@ -29,7 +29,7 @@ const orgSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    email: 'hello@ways.cz',
+    email: 'hello@motoways.cz',
   },
 };
 ---
@@ -62,17 +62,17 @@ const orgSchema = {
     <meta name="twitter:image" content="/og-image.png" />
 
     <!-- Hreflang -->
-    <link rel="alternate" hreflang="cs" href="https://ways.cz/" />
-    <link rel="alternate" hreflang="en" href="https://ways.cz/en" />
-    <link rel="alternate" hreflang="x-default" href="https://ways.cz/" />
+    <link rel="alternate" hreflang="cs" href="https://motoways.cz/" />
+    <link rel="alternate" hreflang="en" href="https://motoways.cz/en" />
+    <link rel="alternate" hreflang="x-default" href="https://motoways.cz/" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
 
-    <!-- Plausible analytics — privacy-first, no cookies -->
-    <script defer data-domain="ways.cz" src="https://plausible.io/js/script.js"></script>
+    <!-- Plausible analytics — privacy-first, no cookies; dual-track during transition -->
+    <script defer data-domain="ways.cz,motoways.cz" src="https://plausible.io/js/script.js"></script>
 
     <!-- Structured data -->
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />

@@ -2,10 +2,10 @@ import type { T } from './cs';
 
 const en: T = {
   meta: {
-    title: 'Ways — Navigation that knows your ride',
+    title: 'Motoways — Navigation that knows your ride',
     description:
       'Community hazard data, sub-400ms hazard alerts, and motorcycle-aware routing. Join the closed beta.',
-    ogTitle: 'Ways — Navigation that knows',
+    ogTitle: 'Motoways — Navigation that knows',
     ogDescription:
       'Motorcycle navigation. Community hazards. Flow Score. Join the beta.',
   },
@@ -51,7 +51,7 @@ const en: T = {
   },
   solution: {
     overline: 'Solution',
-    headline: "Ways knows what other navigation doesn't.",
+    headline: "Motoways knows what other navigation doesn't.",
     items: [
       {
         title: 'Community hazards',
@@ -74,7 +74,7 @@ const en: T = {
   team: {
     overline: 'Team + traction',
     headline: 'Who is building it.',
-    body: 'Pitland s.r.o. — a Prague startup, AI-first from day one. We build Ways with a model where agents write code, test and iterate — humans direct the product, community and vision.',
+    body: 'Pitland s.r.o. — a Prague startup, AI-first from day one. We build Motoways with a model where agents write code, test and iterate — humans direct the product, community and vision.',
     stats: [
       { value: '≤400ms', label: 'Hazard alert technical limit' },
       { value: 'AI-first', label: 'Execution model' },
@@ -102,7 +102,7 @@ const en: T = {
       ],
       city: 'City',
       cityPlaceholder: 'Prague',
-      gdpr: 'I consent to processing my email, bike type and city for the Ways beta selection (controller: Pitland s.r.o.). <a href="/en/privacy">Privacy policy</a>.',
+      gdpr: 'I consent to processing my email, bike type and city for the Motoways beta selection (controller: Pitland s.r.o.). <a href="/en/privacy">Privacy policy</a>.',
       submit: 'Apply for beta',
       submitting: 'Submitting…',
       successTitle: 'Application received!',
@@ -113,7 +113,7 @@ const en: T = {
     },
   },
   footer: {
-    legal: '© 2026 Pitland s.r.o. Ways is a standalone brand of Pitland s.r.o.',
+    legal: '© 2026 Pitland s.r.o. Motoways is a standalone brand of Pitland s.r.o.',
     privacy: 'Privacy policy',
     privacyHref: '/en/privacy',
     contact: 'Contact',

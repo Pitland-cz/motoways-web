@@ -1,9 +1,9 @@
 const cs = {
   meta: {
-    title: 'Ways — Navigace pro motorkáře, která ví',
+    title: 'Motoways — Navigace pro motorkáře, která ví',
     description:
       'Community hazardová data, sub-400ms hazard alerts a motorcycle-aware routing. Přidej se do uzavřené bety.',
-    ogTitle: 'Ways — Navigace, která ví',
+    ogTitle: 'Motoways — Navigace, která ví',
     ogDescription:
       'Navigace pro motorkáře. Community hazardy. Flow Score. Vstup do bety.',
   },
@@ -49,7 +49,7 @@ const cs = {
   },
   solution: {
     overline: 'Řešení',
-    headline: 'Ways ví, co ostatní navigace nevědí.',
+    headline: 'Motoways ví, co ostatní navigace nevědí.',
     items: [
       {
         title: 'Community hazardy',
@@ -72,7 +72,7 @@ const cs = {
   team: {
     overline: 'Tým + trakce',
     headline: 'Kdo to staví.',
-    body: 'Pitland s.r.o. — startup z Prahy, AI-first od prvního dne. Ways stavíme modelem kde agenti píší kód, testují a iterují — lidé řídí produkt, komunitu a směr.',
+    body: 'Pitland s.r.o. — startup z Prahy, AI-first od prvního dne. Motoways stavíme modelem kde agenti píší kód, testují a iterují — lidé řídí produkt, komunitu a směr.',
     stats: [
       { value: '≤400ms', label: 'Technický limit hazard alertu' },
       { value: 'AI-first', label: 'Execution model' },
@@ -100,7 +100,7 @@ const cs = {
       ],
       city: 'Město',
       cityPlaceholder: 'Praha',
-      gdpr: 'Souhlasím se zpracováním e-mailu, typu motorky a města za účelem beta výběru Ways (správce: Pitland s.r.o.). <a href="/privacy">Zásady ochrany osobních údajů</a>.',
+      gdpr: 'Souhlasím se zpracováním e-mailu, typu motorky a města za účelem beta výběru Motoways (správce: Pitland s.r.o.). <a href="/privacy">Zásady ochrany osobních údajů</a>.',
       submit: 'Přihlásit se do bety',
       submitting: 'Odesílám…',
       successTitle: 'Přihláška přijata!',
@@ -111,7 +111,7 @@ const cs = {
     },
   },
   footer: {
-    legal: '© 2026 Pitland s.r.o. Ways je standalone brand Pitland s.r.o.',
+    legal: '© 2026 Pitland s.r.o. Motoways je standalone brand Pitland s.r.o.',
     privacy: 'Zásady ochrany osobních údajů',
     privacyHref: '/privacy',
     contact: 'Kontakt',

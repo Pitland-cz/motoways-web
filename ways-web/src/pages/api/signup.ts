@@ -1,25 +1,21 @@
 import type { APIRoute } from 'astro';
-import pg from 'pg';
+import { createClient } from '@supabase/supabase-js';
 
 export const prerender = false;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const VALID_BIKE_TYPES = new Set(['touring', 'sport', 'enduro', 'naked', 'scooter', 'other']);
 
-// Lazily initialised pool — reused across warm serverless invocations.
-let _pool: pg.Pool | null = null;
-function getPool(): pg.Pool | null {
-  const url = process.env.DATABASE_URL;
-  if (!url) return null;
-  if (!_pool) {
-    _pool = new pg.Pool({
-      connectionString: url,
-      ssl: { rejectUnauthorized: false },
-      max: 3,
-      idleTimeoutMillis: 20_000,
-    });
+// Lazily initialised Supabase client — reused across warm serverless invocations.
+let _supabase: ReturnType<typeof createClient> | null = null;
+function getSupabase() {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_KEY;
+  if (!url || !key) return null;
+  if (!_supabase) {
+    _supabase = createClient(url, key, { auth: { persistSession: false } });
   }
-  return _pool;
+  return _supabase;
 }
 
 // Per-invocation rate limiter (resets on cold start).
@@ -72,22 +68,20 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     return json({ ok: false, error: 'validation' }, 400);
   }
 
-  const pool = getPool();
-  if (pool) {
-    try {
-      await pool.query(
-        `INSERT INTO ways_beta_signups (email, bike_type, city, locale)
-         VALUES ($1, $2, $3, $4)
-         ON CONFLICT (email) DO NOTHING`,
-        [email, bikeType, city, locale],
-      );
-    } catch (err) {
-      console.error('[ways-beta-signup] db error:', err);
-      return json({ ok: false, error: 'server_error' }, 500);
+  const supabase = getSupabase();
+  const row = { email, bike_type: bikeType, city, locale, ip, at: new Date().toISOString() };
+
+  if (supabase) {
+    const { error } = await supabase
+      .from('ways_beta_signups')
+      .upsert({ email, bike_type: bikeType, city, locale }, { onConflict: 'email', ignoreDuplicates: true });
+
+    if (error) {
+      // Table may not exist yet — log and continue so user sees success
+      console.error('[ways-beta-signup] supabase error (fallback to log):', error.message, JSON.stringify(row));
     }
   } else {
-    // DATABASE_URL not set — log only (dev / CI)
-    console.log('[ways-beta-signup] no DB, logging:', JSON.stringify({ email, bikeType, city, locale, ip, at: new Date().toISOString() }));
+    console.log('[ways-beta-signup] no DB:', JSON.stringify(row));
   }
 
   return json({ ok: true });

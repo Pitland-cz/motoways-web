@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/vercel": "^8.1.0",
     "@fontsource/poppins": "^5.1.1",
-    "astro": "^5.1.0",
-    "pg": "^8.20.0"
+    "@supabase/supabase-js": "^2.105.3",
+    "astro": "^5.1.0"
   }
 }

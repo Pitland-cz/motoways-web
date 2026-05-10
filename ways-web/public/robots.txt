@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ways.cz/sitemap.xml
+Sitemap: https://motoways.cz/sitemap.xml

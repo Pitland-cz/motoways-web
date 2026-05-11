@@ -1,8 +1,5 @@
 ---
 import type { T, Locale } from '../i18n';
-import '@fontsource/poppins/400.css';
-import '@fontsource/poppins/600.css';
-import '@fontsource/poppins/700.css';
 
 interface Props {
   tr: T;
@@ -39,37 +36,55 @@ const orgSchema = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1d1d1b" />
+    <meta name="theme-color" content="#0a0a0a" />
     <title>{pageTitle ?? tr.meta.title}</title>
     <meta name="description" content={pageDesc ?? tr.meta.description} />
     <link rel="canonical" href={canonicalURL} />
 
+    <!-- Favicons — Brand v3.0 -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#0a0a0a" />
+    <meta name="msapplication-TileImage" content="/mstile-150x150.png" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Motoways" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={tr.meta.ogTitle} />
     <meta property="og:description" content={tr.meta.ogDescription} />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="https://www.motoways.cz/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Motoways — M-as-route logo" />
     <meta property="og:locale" content={locale === 'cs' ? 'cs_CZ' : 'en_US'} />
     <meta property="og:locale:alternate" content={locale === 'cs' ? 'en_US' : 'cs_CZ'} />
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@motoways" />
     <meta name="twitter:title" content={tr.meta.ogTitle} />
     <meta name="twitter:description" content={tr.meta.ogDescription} />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content="https://www.motoways.cz/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Motoways — M-as-route logo" />
 
     <!-- Hreflang -->
     <link rel="alternate" hreflang="cs" href="https://motoways.cz/" />
     <link rel="alternate" hreflang="en" href="https://motoways.cz/en" />
     <link rel="alternate" hreflang="x-default" href="https://motoways.cz/" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <!-- Fonts — Poppins display + Inter body + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+    <!-- Brand tokens (CSS custom properties) -->
+    <link rel="stylesheet" href="/tokens.css" />
 
     <!-- Plausible analytics — privacy-first, no cookies; dual-track during transition -->
     <script defer data-domain="ways.cz,motoways.cz" src="https://plausible.io/js/script.js"></script>
@@ -93,7 +108,8 @@ const orgSchema = {
     --c-text-muted: rgba(255, 255, 255, 0.55);
     --c-lime-dim: rgba(198, 255, 0, 0.08);
 
-    --font: 'Poppins', system-ui, sans-serif;
+    --font: 'Poppins', 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
 
     --container-max: 1180px;
     --px: clamp(1.25rem, 5vw, 3rem);

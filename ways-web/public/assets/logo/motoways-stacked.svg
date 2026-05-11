@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="800" height="800">
+<defs></defs>
+
+<polyline points="45,118 71,25 100,90 129,25 155,118" fill="none" stroke="#1d1d1b" stroke-width="20" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"></polyline>
+<polyline points="45,118 71,25 100,90 129,25 155,118" fill="none" stroke="#1d1d1b" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"></polyline>
+<circle cx="45" cy="118" r="5.7" fill="#ffffff" stroke="#1d1d1b" stroke-width="2.1"></circle>
+<circle cx="155" cy="118" r="5.7" fill="#ffffff" stroke="#1d1d1b" stroke-width="2.1"></circle>
+<circle cx="100" cy="88.5" r="5" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.1"></circle>
+<line x1="72" y1="144" x2="128" y2="144" stroke="#c6ff00" stroke-width="2"></line>
+<text x="100" y="172" class="wm" font-family="Poppins, sans-serif" font-weight="700" font-style="italic" font-size="24" fill="#1d1d1b" text-anchor="middle">Motoways</text>
+</svg>

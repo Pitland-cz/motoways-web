@@ -1,0 +1,16 @@
+:root{
+  --motoways-ink: #0a0a0a;
+  --motoways-ink-soft: #1d1d1b;
+  --motoways-lime: #c6ff00;
+  --motoways-paper: #fafaf7;
+  --motoways-fog: #f0eeea;
+  --motoways-stone: #7a7770;
+  --motoways-halo-light: rgba(29,29,27,0.16);
+  --motoways-halo-dark:  rgba(198,255,0,0.22);
+  --motoways-font-display: 'Poppins', 'Inter', system-ui, sans-serif;
+  --motoways-font-body:    'Inter', system-ui, sans-serif;
+  --motoways-font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  --motoways-radius-icon: 22.5%;
+  --motoways-stroke-m: 13;
+  --motoways-halo-m: 34;
+}

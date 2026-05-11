@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Motoways — Brand Book · v1 Editorial</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Motoways Brand Book — kompletní průvodce vizuální identitou značky Motoways. Logomanuál, barevná paleta, typografie a brand guidelines v1.">
+<link rel="canonical" href="https://motoways.cz/brand">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://motoways.cz/brand">
+<meta property="og:title" content="Motoways — Brand Book">
+<meta property="og:description" content="Kompletní průvodce vizuální identitou značky Motoways — logomanuál, barevná paleta, typografie a brand guidelines.">
+<meta property="og:image" content="https://motoways.cz/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motoways — Brand Book">
+<meta name="twitter:description" content="Kompletní průvodce vizuální identitou značky Motoways.">
+<meta name="twitter:image" content="https://motoways.cz/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lime:#c6ff00; --lime-deep:#a8da00;
+    --ink:#0a0a0a; --ink-soft:#1d1d1b;
+    --paper:#fafaf7; --paper-warm:#f3f1ea;
+    --rule:#e6e4de; --mute:#7a7770;
+    --warn:#ff8a3d; --ok:#1f8a5b; --info:#2a6fdb; --err:#e23b3b;
+    --gutter:#dadada;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--gutter);color:var(--ink-soft);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;font-size:11pt;line-height:1.5}
+  .page{width:210mm;height:297mm;margin:8mm auto;background:var(--paper);position:relative;overflow:hidden;page-break-after:always;box-shadow:0 1px 3px rgba(0,0,0,.18),0 6px 24px rgba(0,0,0,.12)}
+  .page.dark{background:#0a0a0a;color:#f0eeea}
+  .page.warm{background:var(--paper-warm)}
+  .pad-lg{padding:24mm 20mm;padding:28mm 22mm}
+  .ph{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:8.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  .ph .seg{display:flex;gap:14px;align-items:center}
+  .ph .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);display:inline-block}
+  .pf{position:absolute;left:22mm;right:22mm;bottom:10mm;display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+  .pf .num{font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:11pt;letter-spacing:0;color:var(--ink-soft)}
+  .dark .pf .num{color:#f0eeea}
+  .dark .pf, .dark .ph{color:#7a7770}
+  h1,h2,h3,h4{margin:0;font-family:'Poppins',sans-serif;letter-spacing:-.01em}
+  .display{font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:110pt;line-height:.88;letter-spacing:-.025em}
+  .h-1{font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:42pt;line-height:.95;letter-spacing:-.02em;margin:0}
+  .h-2{font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:24pt;line-height:1;letter-spacing:-.015em;margin:0}
+  .h-3{font-family:'Poppins',sans-serif;font-weight:600;font-size:14pt;line-height:1.1;margin:0}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:8.5pt;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+  .lede{font-size:11.5pt;line-height:1.5;max-width:60ch;color:#2c2a25}
+  .small{font-size:9pt;line-height:1.45;color:#3c3a35}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:9pt;letter-spacing:.04em}
+  .rule{height:1px;background:var(--rule);width:100%}
+  .lime-rule{height:3px;background:var(--lime);width:64px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:5mm}
+  .stack{display:flex;flex-direction:column;gap:6mm}
+  .stack-sm{display:flex;flex-direction:column;gap:3mm}
+  .row{display:flex;gap:6mm;align-items:center}
+  .sw{aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:flex-end;padding:6mm;color:#fff;position:relative;overflow:hidden}
+  .sw .nm{font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:14pt;line-height:1}
+  .sw .hex{font-family:'JetBrains Mono',monospace;font-size:8.5pt;margin-top:6px;letter-spacing:.06em;opacity:.88}
+  .box{border:1px solid var(--rule);padding:5mm;background:#fff}
+
+  /* TOC nav */
+  .toc-screen{position:fixed;right:18px;top:18px;background:#0a0a0a;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9pt;letter-spacing:.06em;border-radius:10px;padding:10px 12px;z-index:50;display:flex;flex-direction:column;gap:4px;max-height:80vh;overflow:auto;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+  .toc-screen a{color:#bbb;text-decoration:none;padding:3px 6px;border-radius:4px}
+  .toc-screen a:hover{color:var(--lime);background:rgba(255,255,255,.04)}
+  .toc-screen .grp{color:var(--lime);margin-top:6px;text-transform:uppercase;font-size:8pt;letter-spacing:.16em}
+  .toc-screen .grp:first-child{margin-top:0}
+
+  /* construction grid overlay */
+  .grid-overlay{position:absolute;inset:0;background-image:linear-gradient(to right,rgba(0,0,0,.06) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,.06) 1px,transparent 1px);background-size:8mm 8mm;pointer-events:none}
+  .dim{font-family:'JetBrains Mono',monospace;font-size:7.5pt;color:#888;letter-spacing:.06em}
+
+  /* misuse marks */
+  .misuse-x{position:absolute;top:4mm;right:4mm;width:14mm;height:14mm;border-radius:50%;background:#e23b3b;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:20pt;line-height:1}
+  .misuse-ok{position:absolute;top:4mm;right:4mm;width:14mm;height:14mm;border-radius:50%;background:var(--ok);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:18pt;line-height:1}
+
+  @media print {
+    body{background:#fff}
+    .page{box-shadow:none;margin:0}
+    .toc-screen{display:none}
+    @page{size:A4 portrait;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<nav class="toc-screen" id="toc">
+  <span class="grp">v1 Editorial</span>
+  <a href="#cover">01 Cover</a>
+  <a href="#toc">02 Index</a>
+  <a href="#story">03 Brand story</a>
+  <a href="#logo">04 Logo system</a>
+  <a href="#construction">05 Construction</a>
+  <a href="#clearspace">06 Clear space</a>
+  <a href="#misuse">07 Misuse</a>
+  <a href="#color">08 Color</a>
+  <a href="#type">09 Typography</a>
+  <a href="#voice">10 Voice & tone</a>
+  <a href="#appicon">11 App icon</a>
+  <a href="#social">12 Social</a>
+</nav>
+
+<!-- 01 COVER -->
+<section class="page" id="cover">
+  <div class="pad-lg" style="height:100%;display:flex;flex-direction:column">
+    <div class="ph">
+      <span class="seg"><span class="dot"></span>Motoways</span>
+      <span>Brand Identity · v1 Editorial</span>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;margin-top:14mm">
+      <div class="eyebrow">Edition 01 · Editorial</div>
+      <div style="height:3mm"></div>
+      <div class="display">Brand<br>Book.</div>
+      <div style="height:14mm"></div>
+      <p class="lede" style="max-width:48ch">Identita značky <i>Motoways</i> — vizuální systém, který stavíme okolo jedné myšlenky: každá cesta má start, cíl a body mezi nimi.</p>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end">
+      <svg viewBox="0 0 620 210" style="width:80mm;height:auto" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(12,0)">
+          <g transform="translate(16,11)">
+            <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#1d1d1b" stroke-width="34" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#1d1d1b" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="12" cy="175" r="9.5" fill="#fff" stroke="#1d1d1b" stroke-width="3.5"/>
+            <circle cx="188" cy="175" r="9.5" fill="#fff" stroke="#1d1d1b" stroke-width="3.5"/>
+            <circle cx="100" cy="103" r="8.5" fill="#c6ff00" stroke="#1d1d1b" stroke-width="3.5"/>
+          </g>
+          <text x="216" y="164" font-family="Poppins, sans-serif" font-weight="700" font-style="italic" font-size="88" fill="#1d1d1b">otoways</text>
+        </g>
+      </svg>
+      <div style="text-align:right">
+        <div class="eyebrow">Vydání</div>
+        <div class="mono">12.05.2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>Motoways · Brand Book</span><span class="num">01</span></div>
+</section>
+
+<!-- 02 INDEX -->
+<section class="page" id="toc">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>Index</span><span>v1 Editorial</span></div>
+    <div style="height:18mm"></div>
+    <div class="eyebrow">Obsah · Contents</div>
+    <h1 class="h-1" style="margin-top:4mm">Co najdete<br>uvnitř.</h1>
+    <div style="height:14mm"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm 14mm;font-size:10.5pt;line-height:1.7">
+      <div>
+        <div class="eyebrow" style="margin-bottom:4mm">Identita</div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Brand story & manifest</span><span class="mono">03</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Logo system & lockupy</span><span class="mono">04</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Construction grid</span><span class="mono">05</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Clear space & minimum</span><span class="mono">06</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Misuse</span><span class="mono">07</span></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:4mm">Systém</div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Color palette</span><span class="mono">08</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Typography</span><span class="mono">09</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Voice & tone</span><span class="mono">10</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>App icon</span><span class="mono">11</span></div>
+        <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding:2mm 0"><span>Social media</span><span class="mono">12</span></div>
+      </div>
+    </div>
+    <div style="height:24mm"></div>
+    <div class="lime-rule"></div>
+    <div style="height:6mm"></div>
+    <p class="small" style="max-width:60ch">Toto vydání je editorial — magazínový, vzdušný, sevřený do dvou fontů a jedné barvy navíc. Pro technickou specifikaci s grid overlay viz Edition 02.</p>
+  </div>
+  <div class="pf"><span>Index</span><span class="num">02</span></div>
+</section>
+
+<!-- 03 BRAND STORY -->
+<section class="page warm" id="story">
+  <div class="pad-lg" style="height:100%;display:flex;flex-direction:column">
+    <div class="ph"><span class="seg"><span class="dot"></span>03 · Manifest</span><span>v1 Editorial</span></div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+      <div class="eyebrow">Brand story</div>
+      <div style="height:6mm"></div>
+      <h1 class="h-1" style="max-width:14ch">Cesta není<br>jen linka<br>mezi dvěma<br>body.</h1>
+      <div style="height:10mm"></div>
+      <div style="max-width:56ch;font-size:12pt;line-height:1.6;color:#2c2a25">
+        <p style="margin:0 0 4mm">Motoways je platforma pro lidi, kteří plánují trasy jako zážitky — ne jen jako přesun. Každá cesta začíná startem, končí cílem, ale to, co se děje mezi, dělá rozdíl.</p>
+        <p style="margin:0 0 4mm">Naše značka je postavená na <b><i>průjezdním bodě</i></b> — tom jednom místě, kvůli kterému stojí za to zajet o kus dál. Symbolizuje ho lime tečka uprostřed našeho M.</p>
+        <p style="margin:0">To není dekorace. Je to rozhodnutí.</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--rule);padding-top:6mm;display:grid;grid-template-columns:repeat(3,1fr);gap:8mm">
+      <div><div class="eyebrow">Promise</div><div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:600;margin-top:2mm">Detour worth taking.</div></div>
+      <div><div class="eyebrow">Audience</div><div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:600;margin-top:2mm">Curious drivers.</div></div>
+      <div><div class="eyebrow">Origin</div><div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:600;margin-top:2mm">Czechia, 2025.</div></div>
+    </div>
+  </div>
+  <div class="pf"><span>03 Manifest</span><span class="num">03</span></div>
+</section>
+
+<!-- 04 LOGO SYSTEM -->
+<section class="page" id="logo">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>04 · Logo</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow">Logo system</div>
+    <h1 class="h-1" style="margin-top:3mm">Čtyři lockupy,<br>jedna myšlenka.</h1>
+    <p class="lede" style="margin-top:4mm">Použijte vždy nejvhodnější variantu pro kontext. Primary lockup je výchozí.</p>
+
+    <div style="height:8mm"></div>
+    <div style="border:1px solid var(--rule);padding:7mm;display:flex;align-items:center;justify-content:center;background:#fff">
+      <svg viewBox="0 0 620 210" style="width:115mm;height:auto" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(12,0)">
+          <g transform="translate(16,11)">
+            <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#1d1d1b" stroke-width="34" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#1d1d1b" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="12" cy="175" r="9.5" fill="#fff" stroke="#1d1d1b" stroke-width="3.5"/>
+            <circle cx="188" cy="175" r="9.5" fill="#fff" stroke="#1d1d1b" stroke-width="3.5"/>
+            <circle cx="100" cy="103" r="8.5" fill="#c6ff00" stroke="#1d1d1b" stroke-width="3.5"/>
+          </g>
+          <text x="216" y="164" font-family="Poppins, sans-serif" font-weight="700" font-style="italic" font-size="88" fill="#1d1d1b">otoways</text>
+        </g>
+      </svg>
+    </div>
+    <div class="row" style="margin-top:3mm;justify-content:space-between"><span class="eyebrow">Primary · horizontal</span><span class="mono">motoways-primary.svg</span></div>
+
+    <div style="height:6mm"></div>
+    <div class="grid-3">
+      <div class="box" style="height:58mm;display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 200 200" style="width:44mm" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="26" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="41" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="159" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.7"/>
+        </svg>
+      </div>
+      <div class="box" style="height:58mm;display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 200 200" style="width:48mm" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="45,118 71,25 100,90 129,25 155,118" fill="none" stroke="#1d1d1b" stroke-width="20" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="45,118 71,25 100,90 129,25 155,118" fill="none" stroke="#1d1d1b" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="45" cy="118" r="5.7" fill="#fff" stroke="#1d1d1b" stroke-width="2.1"/>
+          <circle cx="155" cy="118" r="5.7" fill="#fff" stroke="#1d1d1b" stroke-width="2.1"/>
+          <circle cx="100" cy="88.5" r="5" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.1"/>
+          <line x1="72" y1="144" x2="128" y2="144" stroke="#c6ff00" stroke-width="2"/>
+          <text x="100" y="172" font-family="Poppins, sans-serif" font-weight="700" font-style="italic" font-size="24" fill="#1d1d1b" text-anchor="middle">Motoways</text>
+        </svg>
+      </div>
+      <div class="box" style="height:58mm;background:#0a0a0a;display:flex;align-items:center;justify-content:center">
+        <svg viewBox="0 0 200 200" style="width:44mm" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#c6ff00" stroke-width="26" stroke-opacity="0.22" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#c6ff00" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="41" cy="159" r="7.2" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+          <circle cx="159" cy="159" r="7.2" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+        </svg>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:3mm">
+      <div class="eyebrow">Monogram · light</div>
+      <div class="eyebrow">Stacked · light</div>
+      <div class="eyebrow">Monogram · dark</div>
+    </div>
+  </div>
+  <div class="pf"><span>04 Logo system</span><span class="num">04</span></div>
+</section>
+
+<!-- 05 CONSTRUCTION -->
+<section class="page" id="construction">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>05 · Construction</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow">Construction grid</div>
+    <h1 class="h-1" style="margin-top:3mm">Pět bodů,<br>jedna polyline.</h1>
+    <p class="lede" style="margin-top:4mm">M je vykreslené jako jediná polyline pěti waypointů. Stroke s halo a tři dots. Nic víc.</p>
+
+    <div style="height:10mm"></div>
+    <div class="grid-2" style="grid-template-columns:1.2fr 1fr">
+      <!-- Big M with overlays -->
+      <div style="position:relative;border:1px solid var(--rule);padding:8mm;background:#fff;aspect-ratio:1/1">
+        <div class="grid-overlay"></div>
+        <svg viewBox="0 0 200 200" style="width:100%;height:auto;position:relative;z-index:1" xmlns="http://www.w3.org/2000/svg">
+          <!-- baselines -->
+          <line x1="0"   y1="159"   x2="200" y2="159"   stroke="#c6ff00" stroke-width=".6" stroke-dasharray="2 2" opacity=".7"/>
+          <line x1="0"   y1="41"    x2="200" y2="41"    stroke="#c6ff00" stroke-width=".6" stroke-dasharray="2 2" opacity=".7"/>
+          <line x1="0"   y1="105.5" x2="200" y2="105.5" stroke="#c6ff00" stroke-width=".4" stroke-dasharray="1 2" opacity=".6"/>
+          <line x1="100" y1="0"     x2="100" y2="200"   stroke="#c6ff00" stroke-width=".4" stroke-dasharray="1 2" opacity=".6"/>
+          <!-- M -->
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="26" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- waypoints (dim) -->
+          <circle cx="71.5"  cy="41"     r="3" fill="#2a6fdb"/>
+          <circle cx="128.5" cy="41"     r="3" fill="#2a6fdb"/>
+          <!-- visible dots -->
+          <circle cx="41"  cy="159"   r="7.2" fill="#fff"    stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="159" cy="159"   r="7.2" fill="#fff"    stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.7"/>
+          <!-- labels -->
+          <text x="35" y="174" font-family="JetBrains Mono" font-size="6" fill="#666">P1 START</text>
+          <text x="148" y="174" font-family="JetBrains Mono" font-size="6" fill="#666">P5 CÍL</text>
+          <text x="63" y="32" font-family="JetBrains Mono" font-size="6" fill="#2a6fdb">P2 PEAK</text>
+          <text x="115" y="32" font-family="JetBrains Mono" font-size="6" fill="#2a6fdb">P4 PEAK</text>
+          <text x="83" y="125" font-family="JetBrains Mono" font-size="6" fill="#666">P3 MID</text>
+        </svg>
+      </div>
+
+      <div class="stack-sm" style="gap:5mm">
+        <div>
+          <div class="eyebrow">Waypoints</div>
+          <table style="width:100%;font-family:'JetBrains Mono',monospace;font-size:9pt;margin-top:3mm;border-collapse:collapse">
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">P1</td><td>start</td><td style="text-align:right;color:#666">41 · 159</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">P2</td><td>peak L</td><td style="text-align:right;color:#666">71.5 · 41</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">P3</td><td>mid <span style="color:var(--lime-deep)">●</span></td><td style="text-align:right;color:#666">100 · 105.5</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">P4</td><td>peak R</td><td style="text-align:right;color:#666">128.5 · 41</td></tr>
+            <tr><td style="padding:2mm 0">P5</td><td>cíl</td><td style="text-align:right;color:#666">159 · 159</td></tr>
+          </table>
+        </div>
+        <div>
+          <div class="eyebrow">Specifikace</div>
+          <table style="width:100%;font-family:'JetBrains Mono',monospace;font-size:9pt;margin-top:3mm;border-collapse:collapse">
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">Stroke</td><td style="text-align:right">10u</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">Halo</td><td style="text-align:right">26u · 16%</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">Start/Cíl dot</td><td style="text-align:right">r 7.2 · ring 2.7</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">Mid dot</td><td style="text-align:right">r 6.4 · ring 2.7</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:2mm 0">Linecap</td><td style="text-align:right">round</td></tr>
+            <tr><td style="padding:2mm 0">Linejoin</td><td style="text-align:right">round</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:8mm"></div>
+    <div class="rule"></div>
+    <div style="height:6mm"></div>
+    <p class="small" style="max-width:64ch"><b>Pravidlo:</b> M je vždy vykresleno jako single polyline — ne jako přerušované úsečky. Round joins & caps jsou součástí identity. Mid dot je vždy lime (#C6FF00).</p>
+  </div>
+  <div class="pf"><span>05 Construction</span><span class="num">05</span></div>
+</section>
+
+<!-- 06 CLEAR SPACE -->
+<section class="page" id="clearspace">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>06 · Clear space</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow">Clear space</div>
+    <h1 class="h-1" style="margin-top:3mm">Dej M dýchat.</h1>
+    <p class="lede" style="margin-top:4mm">Minimální ochranná zóna kolem logotypu je <b>X</b> — výška mid dotu. Žádný text, obrázek ani ohraničení se v této zóně neobjevuje.</p>
+
+    <div style="height:10mm"></div>
+    <!-- Clear space diagram -->
+    <div style="border:1px solid var(--rule);padding:8mm;background:#fff;position:relative">
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;height:80mm">
+        <!-- clear space rect -->
+        <div style="position:absolute;border:1.5px dashed var(--lime-deep);width:160mm;height:64mm;display:flex;align-items:center;justify-content:center"></div>
+        <svg viewBox="0 0 620 210" style="width:120mm;height:auto;position:relative;z-index:1" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(12,0)">
+            <g transform="translate(16,11)">
+              <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#1d1d1b" stroke-width="34" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"/>
+              <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#1d1d1b" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="12" cy="175" r="9.5" fill="#fff" stroke="#1d1d1b" stroke-width="3.5"/>
+              <circle cx="188" cy="175" r="9.5" fill="#fff" stroke="#1d1d1b" stroke-width="3.5"/>
+              <circle cx="100" cy="103" r="8.5" fill="#c6ff00" stroke="#1d1d1b" stroke-width="3.5"/>
+            </g>
+            <text x="216" y="164" font-family="Poppins, sans-serif" font-weight="700" font-style="italic" font-size="88" fill="#1d1d1b">otoways</text>
+          </g>
+        </svg>
+        <span class="dim" style="position:absolute;top:8mm;left:50%;transform:translateX(-50%)">X · clear space</span>
+        <span class="dim" style="position:absolute;left:8mm;top:50%;transform:translateY(-50%) rotate(-90deg)">X</span>
+        <span class="dim" style="position:absolute;right:8mm;top:50%;transform:translateY(-50%) rotate(90deg)">X</span>
+        <span class="dim" style="position:absolute;bottom:8mm;left:50%;transform:translateX(-50%)">X</span>
+      </div>
+    </div>
+
+    <div style="height:10mm"></div>
+    <!-- Minimum sizes -->
+    <div class="grid-2">
+      <div>
+        <div class="eyebrow">Minimum size · digital</div>
+        <div style="margin-top:4mm;display:flex;align-items:center;gap:6mm">
+          <div style="border:1px solid var(--rule);padding:4mm;background:#fff">
+            <svg viewBox="0 0 200 200" style="width:14mm" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="26" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"/>
+              <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="41" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+              <circle cx="159" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+              <circle cx="100" cy="105.5" r="6.4" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="mono" style="font-size:11pt;color:var(--ink)">24 × 24 px</div>
+            <div class="small" style="margin-top:2mm">Mono · favicon, app badge</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Minimum size · print</div>
+        <div style="margin-top:4mm;display:flex;align-items:center;gap:6mm">
+          <div style="border:1px solid var(--rule);padding:4mm;background:#fff">
+            <svg viewBox="0 0 620 210" style="width:30mm" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(12,0)">
+                <g transform="translate(16,11)">
+                  <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#1d1d1b" stroke-width="34" stroke-opacity="0.16" stroke-linejoin="round" stroke-linecap="round"/>
+                  <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#1d1d1b" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+                  <circle cx="12" cy="175" r="9.5" fill="#fff" stroke="#1d1d1b" stroke-width="3.5"/>
+                  <circle cx="188" cy="175" r="9.5" fill="#fff" stroke="#1d1d1b" stroke-width="3.5"/>
+                  <circle cx="100" cy="103" r="8.5" fill="#c6ff00" stroke="#1d1d1b" stroke-width="3.5"/>
+                </g>
+                <text x="216" y="164" font-family="Poppins, sans-serif" font-weight="700" font-style="italic" font-size="88" fill="#1d1d1b">otoways</text>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <div class="mono" style="font-size:11pt;color:var(--ink)">30 mm šířka</div>
+            <div class="small" style="margin-top:2mm">Primary · vizitka, hlavička</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>06 Clear space</span><span class="num">06</span></div>
+</section>
+
+<!-- 07 MISUSE -->
+<section class="page" id="misuse">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>07 · Misuse</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow">Co dělat ne</div>
+    <h1 class="h-1" style="margin-top:3mm">Šest věcí,<br>které ničí logo.</h1>
+    <p class="lede" style="margin-top:4mm">Identita je systém. Cokoli z následujícího ji rozbíjí.</p>
+
+    <div style="height:10mm"></div>
+    <div class="grid-3" style="gap:5mm">
+      <!-- 1 stretch -->
+      <div style="position:relative;border:1px solid var(--rule);padding:8mm;background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center">
+        <span class="misuse-x">×</span>
+        <svg viewBox="0 0 200 200" style="width:80%;transform:scaleX(1.6)" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="41" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="159" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.7"/>
+        </svg>
+      </div>
+      <!-- 2 rotate -->
+      <div style="position:relative;border:1px solid var(--rule);padding:8mm;background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center">
+        <span class="misuse-x">×</span>
+        <svg viewBox="0 0 200 200" style="width:70%;transform:rotate(18deg)" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="41" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="159" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.7"/>
+        </svg>
+      </div>
+      <!-- 3 wrong color -->
+      <div style="position:relative;border:1px solid var(--rule);padding:8mm;background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center">
+        <span class="misuse-x">×</span>
+        <svg viewBox="0 0 200 200" style="width:70%" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="41" cy="159" r="7.2" fill="#fff" stroke="#ff3b3b" stroke-width="2.7"/>
+          <circle cx="159" cy="159" r="7.2" fill="#fff" stroke="#ff3b3b" stroke-width="2.7"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="#2a6fdb" stroke="#ff3b3b" stroke-width="2.7"/>
+        </svg>
+      </div>
+      <!-- 4 drop shadow -->
+      <div style="position:relative;border:1px solid var(--rule);padding:8mm;background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center">
+        <span class="misuse-x">×</span>
+        <svg viewBox="0 0 200 200" style="width:70%;filter:drop-shadow(4px 6px 0 rgba(0,0,0,.35))" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="41" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="159" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.7"/>
+        </svg>
+      </div>
+      <!-- 5 outline only -->
+      <div style="position:relative;border:1px solid var(--rule);padding:8mm;background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center">
+        <span class="misuse-x">×</span>
+        <svg viewBox="0 0 200 200" style="width:70%" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="41" cy="159" r="7.2" fill="none" stroke="#1d1d1b" stroke-width="1.5"/>
+          <circle cx="159" cy="159" r="7.2" fill="none" stroke="#1d1d1b" stroke-width="1.5"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="none" stroke="#1d1d1b" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <!-- 6 add elements -->
+      <div style="position:relative;border:1px solid var(--rule);padding:8mm;background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center">
+        <span class="misuse-x">×</span>
+        <svg viewBox="0 0 200 200" style="width:70%" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="41" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="159" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+          <circle cx="100" cy="105.5" r="6.4" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.7"/>
+          <text x="100" y="186" font-family="Poppins" font-style="italic" font-weight="700" font-size="22" text-anchor="middle" fill="#1d1d1b">.cz</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:3mm">
+      <div class="eyebrow">01 · Roztáhnout</div>
+      <div class="eyebrow">02 · Naklonit</div>
+      <div class="eyebrow">03 · Špatná barva</div>
+    </div>
+    <div class="grid-3" style="margin-top:1mm">
+      <div class="eyebrow">04 · Drop shadow</div>
+      <div class="eyebrow">05 · Pouze outline</div>
+      <div class="eyebrow">06 · Přidávat prvky</div>
+    </div>
+  </div>
+  <div class="pf"><span>07 Misuse</span><span class="num">07</span></div>
+</section>
+
+<!-- 08 COLOR -->
+<section class="page" id="color">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>08 · Color</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow">Color palette</div>
+    <h1 class="h-1" style="margin-top:3mm">Lime, ink,<br>a vše mezi.</h1>
+    <p class="lede" style="margin-top:4mm">Lime je hrdina. Ink dělá strukturu. Neutrály drží dech. Akcenty jen tam, kde je potřeba signalizace.</p>
+
+    <div style="height:10mm"></div>
+    <div class="grid-2" style="grid-template-columns:2fr 1fr">
+      <div class="sw" style="background:var(--lime);color:#0a0a0a;aspect-ratio:auto;height:90mm">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:46pt;line-height:.9">Lime<br>#C6FF00</div>
+        <div class="mono" style="margin-top:6mm;opacity:.7">PRIMARY · 1° brand color</div>
+      </div>
+      <div class="stack-sm" style="gap:3mm">
+        <div class="sw" style="background:#0a0a0a;height:43.5mm">
+          <div class="nm">Ink</div>
+          <div class="hex">#0A0A0A</div>
+        </div>
+        <div class="sw" style="background:#fafaf7;color:#0a0a0a;height:43.5mm;border:1px solid var(--rule)">
+          <div class="nm" style="color:#0a0a0a">Paper</div>
+          <div class="hex" style="color:#0a0a0a;opacity:.8">#FAFAF7</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:8mm"></div>
+    <div class="eyebrow">Neutrály · greys</div>
+    <div class="grid-4" style="margin-top:3mm">
+      <div class="sw" style="background:#1d1d1b;height:30mm"><div class="nm" style="font-size:11pt">Ink Soft</div><div class="hex">#1D1D1B</div></div>
+      <div class="sw" style="background:#7a7770;height:30mm"><div class="nm" style="font-size:11pt">Mute</div><div class="hex">#7A7770</div></div>
+      <div class="sw" style="background:#e6e4de;color:#0a0a0a;height:30mm"><div class="nm" style="font-size:11pt;color:#0a0a0a">Rule</div><div class="hex" style="color:#0a0a0a">#E6E4DE</div></div>
+      <div class="sw" style="background:#f3f1ea;color:#0a0a0a;height:30mm;border:1px solid var(--rule)"><div class="nm" style="font-size:11pt;color:#0a0a0a">Warm</div><div class="hex" style="color:#0a0a0a">#F3F1EA</div></div>
+    </div>
+
+    <div style="height:6mm"></div>
+    <div class="eyebrow">Akcenty · signal</div>
+    <div class="grid-4" style="margin-top:3mm">
+      <div class="sw" style="background:var(--ok);height:30mm"><div class="nm" style="font-size:11pt">Success</div><div class="hex">#1F8A5B</div></div>
+      <div class="sw" style="background:var(--info);height:30mm"><div class="nm" style="font-size:11pt">Info</div><div class="hex">#2A6FDB</div></div>
+      <div class="sw" style="background:var(--warn);height:30mm"><div class="nm" style="font-size:11pt">Warn</div><div class="hex">#FF8A3D</div></div>
+      <div class="sw" style="background:var(--err);height:30mm"><div class="nm" style="font-size:11pt">Error</div><div class="hex">#E23B3B</div></div>
+    </div>
+  </div>
+  <div class="pf"><span>08 Color</span><span class="num">08</span></div>
+</section>
+
+<!-- 09 TYPE -->
+<section class="page" id="type">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>09 · Type</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow">Typography</div>
+    <h1 class="h-1" style="margin-top:3mm">Dva fonty.<br>Žádné kompromisy.</h1>
+
+    <div style="height:10mm"></div>
+    <div class="grid-2">
+      <div>
+        <div class="eyebrow">Display & headline</div>
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:88pt;line-height:.9;margin-top:4mm">Aa</div>
+        <div class="h-3" style="margin-top:4mm;font-family:'Poppins',sans-serif;font-weight:700;font-style:italic">Poppins · 700 Italic</div>
+        <p class="small" style="margin-top:2mm">Pro headliny, logo wordmark, eyebrowsy s charakterem. Italic dává trajektorii — odpovídá pohybu M.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Body & UI</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:500;font-size:88pt;line-height:.9;margin-top:4mm;letter-spacing:-.04em">Aa</div>
+        <div class="h-3" style="margin-top:4mm;font-family:'Inter',sans-serif;font-weight:600">Inter · 400 / 500 / 600 / 700</div>
+        <p class="small" style="margin-top:2mm">Pro běžný text, UI, technickou dokumentaci, formuláře. Neutrální, čitelný v malých velikostech.</p>
+      </div>
+    </div>
+
+    <div style="height:10mm"></div>
+    <div class="rule"></div>
+    <div style="height:6mm"></div>
+
+    <div class="eyebrow">Type scale</div>
+    <div style="display:grid;grid-template-columns:auto 1fr auto;gap:3mm 8mm;margin-top:4mm;font-size:10pt;align-items:baseline">
+      <span class="mono" style="color:var(--mute)">Display 96</span>
+      <span style="font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:36pt;line-height:1">Detour worth taking</span>
+      <span class="mono" style="color:var(--mute)">Poppins 700i</span>
+
+      <span class="mono" style="color:var(--mute)">H1 · 42</span>
+      <span style="font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:22pt;line-height:1.05">Cesta není jen linka</span>
+      <span class="mono" style="color:var(--mute)">Poppins 700i</span>
+
+      <span class="mono" style="color:var(--mute)">H2 · 24</span>
+      <span style="font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:14pt;line-height:1.1">Mezi startem a cílem</span>
+      <span class="mono" style="color:var(--mute)">Poppins 700i</span>
+
+      <span class="mono" style="color:var(--mute)">H3 · 14</span>
+      <span style="font-family:'Inter',sans-serif;font-weight:600;font-size:12pt">Section heading</span>
+      <span class="mono" style="color:var(--mute)">Inter 600</span>
+
+      <span class="mono" style="color:var(--mute)">Body · 11</span>
+      <span style="font-family:'Inter',sans-serif;font-weight:400;font-size:11pt;line-height:1.5">Plynulý čitelný odstavec pro běžný text, dokumentaci a UI komponenty.</span>
+      <span class="mono" style="color:var(--mute)">Inter 400</span>
+
+      <span class="mono" style="color:var(--mute)">Eyebrow · 9</span>
+      <span class="eyebrow">METADATA · 0.18em</span>
+      <span class="mono" style="color:var(--mute)">JetBrains Mono</span>
+    </div>
+  </div>
+  <div class="pf"><span>09 Typography</span><span class="num">09</span></div>
+</section>
+
+<!-- 10 VOICE -->
+<section class="page warm" id="voice">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>10 · Voice</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow">Voice & tone</div>
+    <h1 class="h-1" style="margin-top:3mm">Mluvíme jako<br>někdo, kdo zná<br>cestu.</h1>
+    <p class="lede" style="margin-top:4mm">Klidně. Konkrétně. Bez exklamací. Bez korporátu. Bez prázdných slibů.</p>
+
+    <div style="height:10mm"></div>
+    <div class="grid-2">
+      <div class="box" style="border:none;background:#fff;padding:8mm">
+        <div class="eyebrow" style="color:var(--ok)">✓ Říkáme</div>
+        <ul style="list-style:none;padding:0;margin:4mm 0 0;font-size:11pt;line-height:1.7">
+          <li style="border-bottom:1px solid var(--rule);padding:2mm 0"><i>„Tahle zastávka stojí za to."</i></li>
+          <li style="border-bottom:1px solid var(--rule);padding:2mm 0"><i>„Naplánuj si průjezd, ne jen cíl."</i></li>
+          <li style="border-bottom:1px solid var(--rule);padding:2mm 0"><i>„Mezi A a B je pár míst, která změní den."</i></li>
+          <li style="padding:2mm 0"><i>„Pojeď trochu jinudy."</i></li>
+        </ul>
+      </div>
+      <div class="box" style="border:none;background:#fff;padding:8mm">
+        <div class="eyebrow" style="color:var(--err)">× Neříkáme</div>
+        <ul style="list-style:none;padding:0;margin:4mm 0 0;font-size:11pt;line-height:1.7">
+          <li style="border-bottom:1px solid var(--rule);padding:2mm 0;color:#888"><s>„Revoluce v plánování!"</s></li>
+          <li style="border-bottom:1px solid var(--rule);padding:2mm 0;color:#888"><s>„Disruptujeme mobilitu."</s></li>
+          <li style="border-bottom:1px solid var(--rule);padding:2mm 0;color:#888"><s>„Nejlepší trasy na trhu! 🚗💨"</s></li>
+          <li style="padding:2mm 0;color:#888"><s>„AI-powered route engine."</s></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="height:8mm"></div>
+    <div class="rule"></div>
+    <div style="height:6mm"></div>
+
+    <div class="grid-3">
+      <div>
+        <div class="eyebrow">Tón</div>
+        <div class="h-3" style="margin-top:2mm;font-family:'Poppins',sans-serif;font-style:italic">Klidný</div>
+        <p class="small" style="margin-top:2mm">Žádné velké emoce. Žádná akce.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Délka</div>
+        <div class="h-3" style="margin-top:2mm;font-family:'Poppins',sans-serif;font-style:italic">Krátká</div>
+        <p class="small" style="margin-top:2mm">Věta jako značka. Tečka uprostřed.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Person</div>
+        <div class="h-3" style="margin-top:2mm;font-family:'Poppins',sans-serif;font-style:italic">2. os.</div>
+        <p class="small" style="margin-top:2mm">Mluvíme přímo k řidiči.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pf"><span>10 Voice & tone</span><span class="num">10</span></div>
+</section>
+
+<!-- 11 APP ICON -->
+<section class="page" id="appicon">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>11 · App icon</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow">App icon · iOS / Android</div>
+    <h1 class="h-1" style="margin-top:3mm">Ikona, kterou<br>najdeš poslepu.</h1>
+    <p class="lede" style="margin-top:4mm">Squircle pozadí v ink, M v lime, dots v ink. Mid dot zůstává lime — vždy.</p>
+
+    <div style="height:10mm"></div>
+    <div class="grid-2" style="grid-template-columns:1.4fr 1fr;align-items:start">
+      <!-- big icon -->
+      <div style="display:flex;align-items:center;justify-content:center;border:1px solid var(--rule);background:#fff;padding:6mm;aspect-ratio:1/1;position:relative">
+        <div class="grid-overlay"></div>
+        <div style="width:84%;aspect-ratio:1/1;background:#0a0a0a;border-radius:22.5%;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;box-shadow:0 1mm 3mm rgba(0,0,0,.15)">
+          <svg viewBox="0 0 200 200" style="width:62%" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#c6ff00" stroke-width="26" stroke-opacity="0.22" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#c6ff00" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="41" cy="159" r="7.2" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+            <circle cx="159" cy="159" r="7.2" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+            <circle cx="100" cy="105.5" r="6.4" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- alt versions -->
+      <div class="stack-sm">
+        <div class="box" style="display:flex;gap:5mm;align-items:center;padding:5mm">
+          <div style="width:22mm;height:22mm;background:#c6ff00;border-radius:5mm;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 200 200" style="width:14mm" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#0a0a0a" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="41" cy="159" r="7.2" fill="#c6ff00" stroke="#0a0a0a" stroke-width="2.7"/>
+              <circle cx="159" cy="159" r="7.2" fill="#c6ff00" stroke="#0a0a0a" stroke-width="2.7"/>
+              <circle cx="100" cy="105.5" r="6.4" fill="#0a0a0a" stroke="#0a0a0a" stroke-width="2.7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="h-3" style="font-family:'Poppins',sans-serif;font-style:italic">Inverted</div>
+            <div class="small">Lime BG · ink M</div>
+          </div>
+        </div>
+        <div class="box" style="display:flex;gap:5mm;align-items:center;padding:5mm">
+          <div style="width:22mm;height:22mm;background:#fafaf7;border:1px solid var(--rule);border-radius:5mm;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 200 200" style="width:14mm" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#1d1d1b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="41" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+              <circle cx="159" cy="159" r="7.2" fill="#fff" stroke="#1d1d1b" stroke-width="2.7"/>
+              <circle cx="100" cy="105.5" r="6.4" fill="#c6ff00" stroke="#1d1d1b" stroke-width="2.7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="h-3" style="font-family:'Poppins',sans-serif;font-style:italic">Light</div>
+            <div class="small">Paper BG · ink M</div>
+          </div>
+        </div>
+        <div class="box" style="padding:5mm">
+          <div class="eyebrow" style="margin-bottom:3mm">Specifikace</div>
+          <table style="width:100%;font-family:'JetBrains Mono',monospace;font-size:8.5pt;border-collapse:collapse">
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:1.5mm 0">Plocha</td><td style="text-align:right">1024 × 1024</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:1.5mm 0">Corner radius</td><td style="text-align:right">22.5 %</td></tr>
+            <tr style="border-bottom:1px solid var(--rule)"><td style="padding:1.5mm 0">M area</td><td style="text-align:right">~62 %</td></tr>
+            <tr><td style="padding:1.5mm 0">Export</td><td style="text-align:right">PNG · SVG</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:8mm"></div>
+    <p class="small" style="max-width:64ch"><b>Pravidlo:</b> M v ikoně používáme bez wordmarku (otoways). Mid dot zůstává <span style="color:var(--lime-deep)">●</span> lime ve všech variantách — je to nepřenechatelný brand prvek.</p>
+  </div>
+  <div class="pf"><span>11 App icon</span><span class="num">11</span></div>
+</section>
+
+<!-- 12 SOCIAL -->
+<section class="page dark" id="social">
+  <div class="pad-lg" style="height:100%">
+    <div class="ph"><span class="seg"><span class="dot"></span>12 · Social</span><span>v1 Editorial</span></div>
+    <div style="height:8mm"></div>
+    <div class="eyebrow" style="color:var(--lime)">Social media · grid</div>
+    <h1 class="h-1" style="margin-top:3mm;color:#f0eeea">Jeden grid.<br>Tři tváře.</h1>
+    <p class="lede" style="margin-top:4mm;color:#aaa">Avatar · cover · post. Dark mode is default — social feed je tmavý kanvas, lime na něm svítí.</p>
+
+    <div style="height:10mm"></div>
+    <div class="grid-2" style="grid-template-columns:1fr 1.4fr;gap:6mm">
+      <!-- avatar + post stack -->
+      <div class="stack-sm">
+        <!-- avatar -->
+        <div style="background:#1d1d1b;padding:6mm;border-radius:3mm">
+          <div class="eyebrow" style="color:#888;margin-bottom:3mm">Avatar · 800×800</div>
+          <div style="width:100%;aspect-ratio:1/1;background:#0a0a0a;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid #2a2a26">
+            <svg viewBox="0 0 200 200" style="width:55%" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#c6ff00" stroke-width="26" stroke-opacity="0.22" stroke-linejoin="round" stroke-linecap="round"/>
+              <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#c6ff00" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+              <circle cx="41" cy="159" r="7.2" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+              <circle cx="159" cy="159" r="7.2" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+              <circle cx="100" cy="105.5" r="6.4" fill="#0a0a0a" stroke="#c6ff00" stroke-width="2.7"/>
+            </svg>
+          </div>
+        </div>
+        <!-- post quote -->
+        <div style="background:var(--lime);color:#0a0a0a;padding:8mm;border-radius:3mm;aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:space-between">
+          <div class="eyebrow" style="color:#0a0a0a;opacity:.6">Post · 1080×1080</div>
+          <div style="font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:24pt;line-height:1;letter-spacing:-.01em">Detour<br>worth<br>taking.</div>
+          <svg viewBox="0 0 200 200" style="width:14mm;align-self:flex-end" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="41,159 71.5,41 100,107.75 128.5,41 159,159" fill="none" stroke="#0a0a0a" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="41" cy="159" r="7.2" fill="#c6ff00" stroke="#0a0a0a" stroke-width="2.7"/>
+            <circle cx="159" cy="159" r="7.2" fill="#c6ff00" stroke="#0a0a0a" stroke-width="2.7"/>
+            <circle cx="100" cy="105.5" r="6.4" fill="#0a0a0a"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- cover -->
+      <div style="background:#1d1d1b;padding:6mm;border-radius:3mm;display:flex;flex-direction:column">
+        <div class="eyebrow" style="color:#888;margin-bottom:3mm">Cover · 1500×500</div>
+        <div style="flex:1;background:#0a0a0a;border-radius:2mm;padding:10mm;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;border:1px solid #2a2a26">
+          <!-- diagonal lime line -->
+          <svg viewBox="0 0 400 130" style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="none">
+            <polyline points="-20,130 70,30 200,90 340,20 430,110" fill="none" stroke="#c6ff00" stroke-width="2" stroke-opacity="0.18"/>
+            <circle cx="200" cy="90" r="4" fill="#c6ff00"/>
+          </svg>
+          <div style="position:relative;z-index:1">
+            <div class="eyebrow" style="color:var(--lime)">Motoways · 2026</div>
+          </div>
+          <div style="position:relative;z-index:1">
+            <div style="font-family:'Poppins',sans-serif;font-weight:700;font-style:italic;font-size:18pt;line-height:1;color:#f0eeea;letter-spacing:-.015em">Naplánuj průjezd,<br>ne jen cíl.</div>
+            <div style="display:flex;align-items:center;gap:4mm;margin-top:5mm">
+              <svg viewBox="0 0 620 210" style="height:8mm;width:auto" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(12,0)">
+                  <g transform="translate(16,11)">
+                    <polyline points="12,175 58,18 100,107 142,18 188,175" fill="none" stroke="#c6ff00" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+                    <circle cx="12" cy="175" r="9.5" fill="#0a0a0a" stroke="#c6ff00" stroke-width="3.5"/>
+                    <circle cx="188" cy="175" r="9.5" fill="#0a0a0a" stroke="#c6ff00" stroke-width="3.5"/>
+                    <circle cx="100" cy="103" r="8.5" fill="#0a0a0a" stroke="#c6ff00" stroke-width="3.5"/>
+                  </g>
+                  <text x="216" y="164" font-family="Poppins, sans-serif" font-weight="700" font-style="italic" font-size="88" fill="#c6ff00">otoways</text>
+                </g>
+              </svg>
+              <span class="mono" style="color:#888">@motoways</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:8mm"></div>
+    <div class="rule" style="background:#2a2a26"></div>
+    <div style="height:6mm"></div>
+    <div class="grid-3">
+      <div><div class="eyebrow" style="color:#888">Avatar</div><div class="mono" style="color:#aaa;margin-top:2mm">800 × 800 · dark</div></div>
+      <div><div class="eyebrow" style="color:#888">Cover</div><div class="mono" style="color:#aaa;margin-top:2mm">1500 × 500 · dark</div></div>
+      <div><div class="eyebrow" style="color:#888">Post</div><div class="mono" style="color:#aaa;margin-top:2mm">1080 × 1080 · lime</div></div>
+    </div>
+  </div>
+  <div class="pf"><span>12 Social</span><span class="num">12</span></div>
+</section>
+
+</body>
+</html>

@@ -1,17 +1,16 @@
 ---
-import type { T, Locale } from '../i18n';
+import type { T } from '../i18n';
 
 interface Props {
   tr: T;
-  locale: Locale;
 }
 
-const { tr, locale } = Astro.props;
+const { tr } = Astro.props;
 ---
 
 <header class="nav-wrap" role="banner">
   <nav class="nav container" aria-label="Main navigation">
-    <a href={locale === 'cs' ? '/' : '/en'} class="nav-logo" aria-label="Motoways — home">
+    <a href="/" class="nav-logo" aria-label="Motoways — home">
       <img src="/assets/logo/motoways-primary-dark.svg" alt="Motoways" width="160" height="54" />
     </a>
 
@@ -20,14 +19,11 @@ const { tr, locale } = Astro.props;
     </button>
 
     <div class="nav-menu" id="nav-menu" role="list">
-      <a href={`${locale === 'en' ? '/en' : ''}#problem`} class="nav-link" role="listitem">{tr.nav.problem}</a>
-      <a href={`${locale === 'en' ? '/en' : ''}#solution`} class="nav-link" role="listitem">{tr.nav.solution}</a>
-      <a href={`${locale === 'en' ? '/en' : ''}#team`} class="nav-link" role="listitem">{tr.nav.team}</a>
-      <a href={tr.nav.langSwitchHref} class="nav-link nav-lang" role="listitem" hreflang={locale === 'cs' ? 'en' : 'cs'}>
-        {tr.nav.langSwitch}
-      </a>
+      <a href="#problem" class="nav-link" role="listitem">{tr.nav.problem}</a>
+      <a href="#solution" class="nav-link" role="listitem">{tr.nav.solution}</a>
+      <a href="#team" class="nav-link" role="listitem">{tr.nav.team}</a>
       <a
-        href={`${locale === 'en' ? '/en' : ''}#signup`}
+        href="#signup"
         class="btn-primary nav-cta"
         role="listitem"
         data-plausible-goal="CTA Click"

@@ -5,12 +5,5 @@ export default defineConfig({
   site: 'https://motoways.cz',
   output: 'server',
   adapter: vercel(),
-  i18n: {
-    defaultLocale: 'cs',
-    locales: ['cs', 'en'],
-    routing: {
-      prefixDefaultLocale: false,
-    },
-  },
   compressHTML: true,
 });

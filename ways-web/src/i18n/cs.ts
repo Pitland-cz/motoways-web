@@ -115,7 +115,7 @@ const cs = {
     privacy: 'Zásady ochrany osobních údajů',
     privacyHref: '/privacy',
     contact: 'Kontakt',
-    contactHref: 'mailto:hello@motoways.cz',
+    contactHref: 'mailto:info@motoways.cz',
   },
 } as const;
 

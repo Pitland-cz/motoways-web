@@ -11,33 +11,8 @@ const { tr, locale } = Astro.props;
 
 <header class="nav-wrap" role="banner">
   <nav class="nav container" aria-label="Main navigation">
-    <a href={locale === 'cs' ? '/' : '/en'} class="nav-logo" aria-label="Ways — home">
-      <!-- Wordmark inline SVG (dark-bg variant, 160×94 viewBox scaled) -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 360 210"
-        width="108"
-        height="63"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <g transform="translate(16, 11)">
-          <polyline points="12,18 58,175 100,86 142,175 188,18"
-            fill="none" stroke="#c6ff00" stroke-width="30"
-            stroke-opacity="0.18" stroke-linejoin="round" stroke-linecap="round"/>
-          <polyline points="12,18 58,175 100,86 142,175 188,18"
-            fill="none" stroke="#c6ff00" stroke-width="13"
-            stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="12"  cy="18"  r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
-          <circle cx="188" cy="18"  r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
-          <circle cx="58"  cy="175" r="6.5" fill="#c6ff00"/>
-          <circle cx="142" cy="175" r="6.5" fill="#c6ff00"/>
-          <circle cx="100" cy="86"  r="8"   fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
-          <text x="179" y="153"
-            font-family="Poppins, sans-serif" font-size="118" font-weight="700"
-            fill="#ffffff" dominant-baseline="auto">ays</text>
-        </g>
-      </svg>
+    <a href={locale === 'cs' ? '/' : '/en'} class="nav-logo" aria-label="Motoways — home">
+      <img src="/assets/logo/motoways-primary-dark.svg" alt="Motoways" width="160" height="54" />
     </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">

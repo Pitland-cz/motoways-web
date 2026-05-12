@@ -24,21 +24,12 @@ const lines = tr.hero.headline.split('\n');
       ))}
     </h1>
 
-    <!-- W mark monogram -->
+    <!-- Brand v3.0 M-as-route hero illustration -->
     <div class="hero-mark" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="180" height="180">
-        <polyline points="21.5,21.5 62.5,178.5 100,89.5 137.5,178.5 178.5,21.5"
-          fill="none" stroke="#c6ff00" stroke-width="30"
-          stroke-opacity="0.18" stroke-linejoin="round" stroke-linecap="round"/>
-        <polyline points="21.5,21.5 62.5,178.5 100,89.5 137.5,178.5 178.5,21.5"
-          fill="none" stroke="#c6ff00" stroke-width="13"
-          stroke-linejoin="round" stroke-linecap="round"/>
-        <circle cx="21.5" cy="21.5" r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
-        <circle cx="178.5" cy="21.5" r="9.5" fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
-        <circle cx="62.5"  cy="178.5" r="6.5" fill="#c6ff00"/>
-        <circle cx="137.5" cy="178.5" r="6.5" fill="#c6ff00"/>
-        <circle cx="100"   cy="89.5"  r="8"   fill="#1d1d1b" stroke="#c6ff00" stroke-width="3.5"/>
-      </svg>
+      <picture>
+        <source srcset="/hero-dark.svg" media="(prefers-color-scheme: dark)" />
+        <img src="/hero-light.svg" alt="" width="360" height="203" decoding="async" fetchpriority="high" />
+      </picture>
     </div>
 
     <p class="hero-subline">{tr.hero.subline}</p>
@@ -115,6 +106,12 @@ const lines = tr.hero.headline.split('\n');
   .hero-mark {
     margin: 2rem 0 1.75rem;
     animation: pulse-glow 4s ease-in-out infinite;
+    max-width: min(360px, 80vw);
+  }
+
+  .hero-mark img {
+    width: 100%;
+    height: auto;
   }
 
   @keyframes pulse-glow {

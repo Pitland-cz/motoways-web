@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
 <defs></defs>
-<rect width="1200" height="630" fill="#0a0a0a"></rect>
+<rect width="1200" height="675" fill="#0a0a0a"></rect>
 <polyline points="-40,580 200,140 480,400 760,80 1040,520 1240,180" fill="none" stroke="#c6ff00" stroke-width="3" stroke-opacity="0.14"></polyline>
 <circle cx="480" cy="400" r="6" fill="#c6ff00"></circle>
 <g transform="translate(390,210) scale(0.95)">

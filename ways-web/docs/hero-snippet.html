@@ -1,0 +1,19 @@
+<!-- Motoways v3.0 — hero section -->
+<!-- The hero SVG is 1920x1080 and includes wordmark + claim + footer line.
+     Use light variant on paper bg, dark variant on ink bg.
+     Prefer <img> for first paint (decoding=async, fetchpriority=high). -->
+
+<section class="hero motoways-hero">
+  <picture>
+    <source srcset="/hero-dark.svg" media="(prefers-color-scheme: dark)">
+    <img
+      src="/hero-light.svg"
+      alt="Motoways — Naplánuj průjezd, ne jen cíl."
+      width="1920" height="1080"
+      decoding="async" fetchpriority="high">
+  </picture>
+</section>
+
+<!-- If the existing landing has a richer hero (CTAs, gradients, copy overlays)
+     keep the layout — just swap the W-direction logo/illustration for
+     motoways-primary.svg and use motoways-lime (#c6ff00) for the single accent. -->
